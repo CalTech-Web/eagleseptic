@@ -291,11 +291,13 @@ export default function HomePage() {
       {/* Hero */}
       <section className="relative flex min-h-[380px] items-center overflow-hidden bg-brand-900">
         <Image
-          src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=1600&h=900&q=85&fit=crop&crop=center"
+          src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=1200&h=675&q=60&fit=crop&crop=center"
           alt="Residential home with green lawn and healthy septic system"
           fill
           className="object-cover object-center opacity-30"
           priority
+          quality={55}
+          sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-brand-900/85 via-brand-800/75 to-brand-700/65" />
         <div className="container-max section-padding relative w-full">
