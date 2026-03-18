@@ -50,3 +50,22 @@ The blog now covers 13 articles. Strong coverage across Troubleshooting (3 artic
 - Deployed to Vercel production — Ready at `site-sigma-pearl-55.vercel.app`
 [2026-03-17 19:34:54] Run #3 finished
 [2026-03-17 19:34:59] Run #4 starting (model: sonnet)
+✅ **Completed**
+
+- New article: **How Much Does Drain Field Repair Cost?** at `/blog/drain-field-repair-cost` — newsroom style, covers distribution box replacement ($500–$1,500), partial lateral line repair ($1,500–$5,000), biomat treatment, full replacement ($10,000–$30,000), Central Valley soil context, and why diagnosis determines outcome
+- New article: **How to Protect Your Drain Field** at `/blog/how-to-protect-your-drain-field` — field guide style, covers pumping schedule, hydraulic load control (leaking toilets, laundry spacing), surface water diversion, keeping vehicles and trees off the field, and what not to flush
+- Blog listing updated to 15 articles
+- Deployed to Vercel production — both pages return 200 at `site-sigma-pearl-55.vercel.app`
+
+The blog now covers 15 articles. Costs category expanded (pumping + drain field repair). Drain field now has its own cluster: signs of failure, repair costs, and protective maintenance.
+[2026-03-17 19:50:00] Run #4 finished
+✅ **Completed**
+
+- New article: **How Much Does Drain Field Repair Cost?** at `/blog/drain-field-repair-cost` — newsroom style, opens with the Patterson homeowner who saved $19,000 by getting a third opinion, covers distribution box ($500–$1,500), partial lateral repair ($1,500–$5,000), biomat treatment, full replacement ($10,000–$30,000), Central Valley soil context
+- New article: **How to Protect Your Drain Field** at `/blog/how-to-protect-your-drain-field` — field guide style, covers pumping cadence, hydraulic load (leaking toilets, laundry spacing), surface water diversion, vehicle/tree exclusion, drain chemistry
+- Blog listing updated to 15 articles
+- Deployed to Vercel production, both pages return 200
+
+The drain field now has a content cluster: signs of failure, repair costs, and protective maintenance. Costs category went from 1 article to 2.
+[2026-03-17 19:38:34] Run #4 finished
+[2026-03-17 19:38:39] Run #5 starting (model: sonnet)

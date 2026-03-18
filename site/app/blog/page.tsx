@@ -113,6 +113,20 @@ const posts = [
     category: "Maintenance",
     image: "/images/lawn-drain-field.jpg",
   },
+  {
+    title: "How to Tell If Your Septic Tank Is Full",
+    slug: "/blog/how-to-tell-if-septic-tank-is-full",
+    excerpt: "Slow drains, gurgling sounds, and outdoor odors are the early signs your tank needs attention. Here is what each symptom means before it becomes a drain field problem.",
+    category: "Troubleshooting",
+    image: "/images/lawn-drain-field.jpg",
+  },
+  {
+    title: "Buying a House with a Septic System",
+    slug: "/blog/buying-house-with-septic-system",
+    excerpt: "A standard home inspection does not cover the drain field. Here is what buyers need to know about inspections, permit records, and negotiating repairs before closing.",
+    category: "Inspections",
+    image: "/images/residential-neighborhood-sewer-septic.jpg",
+  },
 ];
 
 export default function BlogPage() {
