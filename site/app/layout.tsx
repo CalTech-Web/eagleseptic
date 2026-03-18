@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://eaglesepticpumping.com"),
   title: "Eagle Septic Guide - Free Septic System Information for Homeowners",
   description: "Free septic system information for homeowners. Plain-language guides, maintenance tips, cost information, and troubleshooting help from licensed technicians with 18+ years of experience.",
   openGraph: {

@@ -1,7 +1,5 @@
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
-  metadataBase: new URL("https://eaglesepticpumping.com"),
-};
+const nextConfig: NextConfig = {};
 
 export default nextConfig;
