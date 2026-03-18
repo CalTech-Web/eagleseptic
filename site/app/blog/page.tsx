@@ -99,6 +99,20 @@ const posts = [
     category: "Maintenance",
     image: "/images/lawn-drain-field.jpg",
   },
+  {
+    title: "How Much Does Drain Field Repair Cost?",
+    slug: "/blog/drain-field-repair-cost",
+    excerpt: "Drain field repair in the Central Valley runs $3,000 to $15,000 for targeted fixes, or $10,000 to $30,000 for full replacement. Here is what separates those outcomes.",
+    category: "Costs",
+    image: "/images/lawn-drain-field.jpg",
+  },
+  {
+    title: "How to Protect Your Drain Field",
+    slug: "/blog/how-to-protect-your-drain-field",
+    excerpt: "Most drain fields fail from years of management decisions, not a single event. The habits that protect a field cost nothing. Replacing it costs $10,000 to $30,000.",
+    category: "Maintenance",
+    image: "/images/lawn-drain-field.jpg",
+  },
 ];
 
 export default function BlogPage() {
