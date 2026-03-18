@@ -28,3 +28,22 @@ Deployment succeeded.
 - Pulled directly from the 5-phase process in SITE_FACTS.md
 [2026-03-17 19:08:08] Run #3 finished
 [2026-03-17 19:08:13] Run #4 starting (model: sonnet)
+Deployment succeeded.
+
+**What was added:** A split CTA section at the bottom of the homepage, giving visitors a clear next step before hitting the footer. It features:
+
+- **Emergency path** (red-tinted card): Sewage backup messaging, Emergency Guide button, phone number, and "2 to 4 hour response" callout
+- **Scheduled service path** (green-tinted card): Routine maintenance messaging, View Services button, pricing link, and inline trust signals (no surprise charges, free estimate, 4.9 stars)
+- **4-item trust bar** below both cards: 18+ Years Experience, Upfront Pricing Always, 24/7 Emergency Response, C-42 Licensed Technicians
+[2026-03-17 19:11:28] Run #4 finished
+[2026-03-17 19:11:33] Run #5 starting (model: sonnet)
+Deployment succeeded.
+
+**What was added:** A "Serving Central Valley, California" service areas section placed between the Health Assessment and Final CTA sections:
+- Three county cards (Stanislaus, San Joaquin, Merced) each with a location pin icon
+- City badges styled as pill links that link to individual city service area pages
+- Hover state transitions city badges from white/brand to solid brand navy
+- Light brand-50 background with brand-100 borders for visual cohesion with the site's design system
+- Footer note linking to the full `/service-areas` page
+[2026-03-17 19:14:56] Run #5 finished
+[2026-03-17 19:14:56] Reached max loops (5). Stopping.

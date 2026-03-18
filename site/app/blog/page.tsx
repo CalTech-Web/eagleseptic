@@ -71,6 +71,20 @@ const posts = [
     category: "Basics",
     image: "/images/residential-neighborhood-sewer-septic.jpg",
   },
+  {
+    title: "How to Find Your Septic Tank",
+    slug: "/blog/how-to-find-your-septic-tank",
+    excerpt: "Most homeowners have no idea where their tank is buried. Here is how to locate it before your next service call, starting with county permit records.",
+    category: "How It Works",
+    image: "/images/lawn-drain-field.jpg",
+  },
+  {
+    title: "How Long Does a Septic System Last?",
+    slug: "/blog/how-long-does-a-septic-system-last",
+    excerpt: "A concrete tank can last 40 years. The drain field feeding off it might fail in 20. Here is what determines lifespan and what cuts it short.",
+    category: "How It Works",
+    image: "/images/hero-residential-home.jpg",
+  },
 ];
 
 export default function BlogPage() {
