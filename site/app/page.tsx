@@ -3,9 +3,107 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Eagle Septic Guide - Free Septic System Information for Homeowners",
+  title: "Eagle Septic Guide | Free Septic System Information for Homeowners",
   description: "Free educational resource for homeowners across California's Central Valley. Plain-language septic system guides, maintenance tips, troubleshooting, and cost information.",
 };
+
+const checkIcon = (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4 text-accent-400" aria-hidden="true">
+    <path fillRule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clipRule="evenodd" />
+  </svg>
+);
+
+const arrowIcon = (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-4 w-4" aria-hidden="true">
+    <path fillRule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clipRule="evenodd" />
+  </svg>
+);
+
+const guides = [
+  {
+    href: "/blog/septic-system-vs-sewer-system",
+    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&h=630&q=80&fit=crop&crop=center",
+    alt: "Residential neighborhood illustrating the choice between septic and sewer systems",
+    category: "Education",
+    categoryColor: "bg-cyan-50 text-cyan-700",
+    readTime: "8 min read",
+    title: "Septic System vs. Sewer System: Key Differences, Costs, and What's Right for Your Home",
+    excerpt: "If you're buying a home or building on a rural property, you'll face this question: septic or sewer? Both systems handle wastewater, but they work differently, cost differently, and require different levels of ongoing involvement from homeowners.",
+  },
+  {
+    href: "/blog/how-does-a-septic-system-work",
+    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&h=630&q=80&fit=crop&crop=center",
+    alt: "Green grass lawn over a residential septic drain field on a sunny day",
+    category: "Education",
+    categoryColor: "bg-cyan-50 text-cyan-700",
+    readTime: "10 min read",
+    title: "How Does a Septic System Work? A Complete Guide for Homeowners",
+    excerpt: "About 1 in 5 U.S. homes runs on a septic system, but most homeowners couldn't explain how one actually works. This guide walks through every stage: what happens inside the tank, how the drain field filters effluent, why bacteria are essential, and what your role is in keeping the system healthy.",
+  },
+  {
+    href: "/blog/septic-backup-after-heavy-rain",
+    image: "https://images.unsplash.com/photo-1504701954957-2010ec3bcec1?w=1200&h=630&q=80&fit=crop&crop=center",
+    alt: "Heavy rain falling on a residential yard representing septic system stress during storms",
+    category: "Troubleshooting",
+    categoryColor: "bg-amber-50 text-amber-700",
+    readTime: "7 min read",
+    title: "Septic Backup After Heavy Rain: Why It Happens & What to Do",
+    excerpt: "Rain and septic systems have a complicated relationship. When heavy rain hits, many homeowners see slow drains, yard odors, or worse. Here's why it happens and what to do in the first 30 minutes.",
+  },
+];
+
+const faqs = [
+  {
+    href: "/blog/how-often-pump-septic-tank",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="h-6 w-6" aria-hidden="true">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
+      </svg>
+    ),
+    question: "How often should I pump my septic tank?",
+    answer: "Most households need pumping every 3 to 5 years. A family of four with a 1,000-gallon tank typically pumps every 3 to 4 years. Waiting too long lets solids overflow into the drain field, turning a $400 pump job into a $15,000 or more repair.",
+  },
+  {
+    href: "/blog/warning-signs-septic-system-failing",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="h-6 w-6" aria-hidden="true">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+      </svg>
+    ),
+    question: "What are the warning signs of a failing septic system?",
+    answer: "Key warning signs include slow or gurgling drains, sewage odors inside or outside, unusually lush grass over the drain field, and wet or spongy ground near the tank. Any of these signals you need service soon.",
+  },
+  {
+    href: "/blog/how-does-a-septic-system-work",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="h-6 w-6" aria-hidden="true">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
+      </svg>
+    ),
+    question: "How does a septic system work?",
+    answer: "Wastewater flows from your home into a buried tank where solids settle and bacteria break them down. Clarified liquid (effluent) exits through the outlet pipe into a drain field, where soil filters it before it re-enters the groundwater.",
+  },
+  {
+    href: "/blog/septic-tank-pumping-cost-central-valley",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="h-6 w-6" aria-hidden="true">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    ),
+    question: "How much does septic pumping cost?",
+    answer: "Residential septic pumping in the Central Valley typically runs $300 to $600, depending on tank size and access. Larger tanks (1,500 or more gallons) or difficult-to-reach locations cost more. We provide a firm quote before any work begins.",
+  },
+  {
+    href: "/blog/septic-emergency-what-to-do",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="h-6 w-6" aria-hidden="true">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+      </svg>
+    ),
+    question: "What should I do during a septic emergency?",
+    answer: "Stop all water use immediately, every flush makes it worse. Keep people away from wet areas outside (sewage is a health hazard). Then call a septic company right away; most emergencies can be resolved with an emergency pump-out.",
+  },
+];
 
 const stats = [
   { value: "18+", label: "Years Experience" },
@@ -14,213 +112,270 @@ const stats = [
   { value: "200+", label: "Reviews" },
 ];
 
-const services = [
-  { name: "Septic Tank Pumping", href: "/services/septic-tank-pumping", desc: "Full tank evacuation with inspection and written service summary." },
-  { name: "Tank Cleaning", href: "/services/tank-cleaning-maintenance", desc: "High-pressure interior wash and complete residue removal." },
-  { name: "Septic Inspections", href: "/services/septic-inspections", desc: "Thorough evaluation with detailed written report." },
-  { name: "Emergency Services", href: "/services/emergency-services", desc: "24/7 response. Real person answers. On-site within 2 to 4 hours." },
-  { name: "Drain Field Repair", href: "/services/drain-field-repair", desc: "Diagnosis and repair before replacement is needed." },
-  { name: "New System Installation", href: "/services/new-system-installation", desc: "Site evaluation, permits, installation, and homeowner walkthrough." },
+const healthCategories = [
+  {
+    status: "All Clear",
+    border: "border-accent-200",
+    headerBg: "bg-accent-50",
+    iconBg: "bg-accent-100 text-accent-700",
+    badgeBg: "bg-accent-100 text-accent-800",
+    subtitle: "Your system looks healthy if\u2026",
+    href: "/blog/how-often-pump-septic-tank",
+    linkText: "Maintain your healthy system",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-7 w-7" aria-hidden="true">
+        <path fillRule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clipRule="evenodd" />
+      </svg>
+    ),
+    items: [
+      "Tank was pumped within the last 3 to 5 years",
+      "No sewage odors inside or around your property",
+      "All drains flow at normal speed",
+      "No wet spots or unusually lush grass over the drain field",
+      "You know the location of your tank and access lids",
+    ],
+  },
+  {
+    status: "Attention Needed",
+    border: "border-amber-200",
+    headerBg: "bg-amber-50",
+    iconBg: "bg-amber-100 text-amber-700",
+    badgeBg: "bg-amber-100 text-amber-800",
+    subtitle: "Time to schedule service if\u2026",
+    href: "/blog/warning-signs-septic-system-failing",
+    linkText: "Understand warning signs",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-7 w-7" aria-hidden="true">
+        <path fillRule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM12 8.25a.75.75 0 01.75.75v3.75a.75.75 0 01-1.5 0V9a.75.75 0 01.75-.75zm0 8.25a.75.75 0 100-1.5.75.75 0 000 1.5z" clipRule="evenodd" />
+      </svg>
+    ),
+    items: [
+      "It's been 3 to 5 or more years since your last pump-out",
+      "Drains seem slower than they used to be",
+      "You occasionally notice a faint sewage smell outside",
+      "Grass over the drain field is noticeably greener or faster-growing",
+      "You're buying or selling a home with a septic system",
+    ],
+  },
+  {
+    status: "Emergency",
+    border: "border-red-200",
+    headerBg: "bg-red-50",
+    iconBg: "bg-red-100 text-red-700",
+    badgeBg: "bg-red-100 text-red-800",
+    subtitle: "Get emergency help if\u2026",
+    href: "/blog/septic-emergency-what-to-do",
+    linkText: "What to do in a septic emergency",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-7 w-7" aria-hidden="true">
+        <path fillRule="evenodd" d="M9.401 3.003c1.155-2 4.043-2 5.197 0l7.355 12.748c1.154 2-.29 4.5-2.599 4.5H4.645c-2.309 0-3.752-2.5-2.598-4.5L9.4 3.003zM12 8.25a.75.75 0 01.75.75v3.75a.75.75 0 01-1.5 0V9a.75.75 0 01.75-.75zm0 8.25a.75.75 0 100-1.5.75.75 0 000 1.5z" clipRule="evenodd" />
+      </svg>
+    ),
+    items: [
+      "Sewage is backing up into sinks, tubs, or toilets",
+      "Strong sewage smell inside your home",
+      "Soggy or swampy ground near your septic tank or drain field",
+      "Multiple drains are completely blocked at once",
+      "Last pump-out was more than 7 years ago",
+    ],
+  },
 ];
 
-const testimonials = [
-  { name: "Michael R.", city: "Modesto, CA", quote: "Called at 8am and they were at my house by noon. Professional, explained everything, and the price was exactly what they quoted. No surprises.", service: "Septic Pumping" },
-  { name: "Sandra K.", city: "Turlock, CA", quote: "Sewage backup on a Sunday morning, every homeowner's nightmare. Eagle Septic answered immediately and had someone out within two hours. Absolute lifesavers.", service: "Emergency Service" },
-  { name: "Jennifer T.", city: "Patterson, CA", quote: "Two other companies told me I needed full drain field replacement. Eagle Septic diagnosed the actual problem and repaired it for a fraction of the price. Honest and knowledgeable.", service: "Drain Field Repair" },
-];
-
-const faqs = [
-  { q: "How often should I pump my septic tank?", a: "Most households need pumping every 3 to 5 years. A family of four with a 1,000-gallon tank typically pumps every 3 to 4 years. Waiting too long lets solids overflow into the drain field, turning a $400 pump job into a $15,000 or more repair." },
-  { q: "What are the warning signs of a failing septic system?", a: "Key warning signs include slow or gurgling drains, sewage odors inside or outside, unusually lush grass over the drain field, and wet or spongy ground near the tank. Any of these signals you need service soon." },
-  { q: "How much does septic pumping cost in the Central Valley?", a: "Residential septic pumping in the Modesto and Central Valley area typically runs $300 to $550 for a standard residential tank, depending on tank size and access." },
-];
+const bulletIcon = (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="mt-0.5 h-4 w-4 flex-shrink-0 text-gray-400" aria-hidden="true">
+    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-11.25a.75.75 0 00-1.5 0v4.59L7.3 9.24a.75.75 0 00-1.1 1.02l3.25 3.5a.75.75 0 001.1 0l3.25-3.5a.75.75 0 10-1.1-1.02l-1.95 2.1V6.75z" clipRule="evenodd" />
+  </svg>
+);
 
 export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative bg-[#0c4a6e] text-white overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/hero-residential-home.jpg"
-            alt="Residential home with healthy lawn"
-            fill
-            className="object-cover opacity-30"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0c4a6e]/85 via-[#075985]/75 to-[#0369a1]/65" />
-        </div>
-        <div className="relative max-w-6xl mx-auto px-4 py-24 md:py-32">
-          <div className="max-w-2xl">
-            <span className="inline-block bg-[#16a34a] text-white text-xs font-semibold px-3 py-1 rounded-full mb-4">Free Educational Resource</span>
-            <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
-              Honest Septic System Information for Homeowners
+      <section className="relative flex min-h-[380px] items-center overflow-hidden bg-brand-900">
+        <Image
+          src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=1600&h=900&q=85&fit=crop&crop=center"
+          alt="Residential home with green lawn and healthy septic system"
+          fill
+          className="object-cover object-center opacity-30"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-brand-900/85 via-brand-800/75 to-brand-700/65" />
+        <div className="container-max section-padding relative w-full">
+          <div className="mx-auto max-w-3xl text-center">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-accent-500/20 px-4 py-2 text-sm font-semibold text-accent-400 ring-1 ring-accent-500/30">
+              Free septic system information for homeowners
+            </div>
+            <h1 className="mb-6 text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-6xl">
+              Understand Your{" "}
+              <span className="text-accent-400">Septic System</span>
             </h1>
-            <p className="text-lg text-blue-100 mb-8">
-              Plain-language guides on septic maintenance, troubleshooting, costs, and emergency response. Written by licensed technicians with 18+ years of experience. No jargon, no sales pitch.
+            <p className="mb-8 text-lg text-brand-100 sm:text-xl">
+              Plain-language guides, maintenance tips, and troubleshooting help for homeowners with septic systems. No jargon, no sales pitch.
             </p>
-            <div className="flex flex-wrap gap-4">
-              <Link href="/resources" className="bg-[#16a34a] hover:bg-[#15803d] text-white px-6 py-3 rounded-lg font-semibold transition-colors">Browse All Guides</Link>
-              <Link href="/blog" className="border border-white text-white hover:bg-white hover:text-[#0c4a6e] px-6 py-3 rounded-lg font-semibold transition-colors">Read the Blog</Link>
+            <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+              <Link href="/resources" className="btn-primary text-base">Browse All Guides</Link>
+              <Link href="/blog" className="btn-secondary text-base">Read the Blog</Link>
+            </div>
+            <div className="mt-12 flex flex-wrap items-center justify-center gap-6 text-sm text-brand-100">
+              <div className="flex items-center gap-2">{checkIcon}Free to Read</div>
+              <div className="flex items-center gap-2">{checkIcon}No Ads</div>
+              <div className="flex items-center gap-2">{checkIcon}Homeowner Focused</div>
+              <div className="flex items-center gap-2">{checkIcon}Plain Language</div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="bg-[#075985] text-white">
-        <div className="max-w-6xl mx-auto px-4 py-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      {/* Stats Bar — Social Proof */}
+      <section className="bg-brand-800 text-white">
+        <div className="container-max px-4 sm:px-6 lg:px-8 py-8">
+          <div className="grid grid-cols-2 gap-6 text-center md:grid-cols-4">
             {stats.map((s) => (
               <div key={s.label}>
-                <div className="text-3xl font-bold text-[#16a34a]">{s.value}</div>
-                <div className="text-sm text-blue-200 mt-1">{s.label}</div>
+                <div className="text-3xl font-bold text-accent-400">{s.value}</div>
+                <div className="mt-1 text-sm text-brand-200">{s.label}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* About / Value Prop */}
-      <section className="max-w-6xl mx-auto px-4 py-16">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 className="text-3xl font-bold text-[#0c4a6e] mb-4">Why Eagle Septic Guide?</h2>
-            <p className="text-gray-600 mb-4">Most online septic information is buried in service company websites designed to sell. Eagle Septic Guide is different. We built this resource to give homeowners real answers without pressure or upselling.</p>
-            <p className="text-gray-600 mb-6">Every guide is written in plain language, reviewed for accuracy, and designed to help you make informed decisions about your septic system.</p>
-            <ul className="space-y-3">
-              {[
-                "Free, honest information with no sales pitch",
-                "Written by licensed C-42 certified technicians",
-                "Covers maintenance, costs, emergencies, and more",
-                "Serving Central Valley homeowners since 2024",
-              ].map((item) => (
-                <li key={item} className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-[#16a34a] mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-gray-700">{item}</span>
-                </li>
-              ))}
-            </ul>
+      {/* Blog Guides */}
+      <section className="bg-gray-50 py-16 sm:py-20">
+        <div className="container-max section-padding">
+          <div className="mb-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-brand-600">Free Resources</p>
+              <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">Septic System Guides</h2>
+              <p className="mt-3 max-w-xl text-gray-600">
+                Practical answers to common septic questions, from pumping schedules to warning signs, written by our licensed technicians.
+              </p>
+            </div>
+            <Link href="/blog" className="inline-flex shrink-0 items-center gap-1.5 text-sm font-semibold text-brand-700 hover:text-brand-900">
+              View all guides{arrowIcon}
+            </Link>
           </div>
-          <div className="relative rounded-xl overflow-hidden">
-            <Image
-              src="/images/lawn-drain-field.jpg"
-              alt="Healthy green lawn over septic drain field"
-              width={600}
-              height={400}
-              className="w-full h-72 object-cover rounded-xl"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Services */}
-      <section className="bg-gray-50 py-16">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-[#0c4a6e] mb-3">Services Explained</h2>
-            <p className="text-gray-600 max-w-xl mx-auto">Understand what each septic service involves before you call a contractor.</p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            {services.map((svc) => (
-              <Link key={svc.name} href={svc.href} className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow border border-gray-100">
-                <div className="w-10 h-10 bg-[#0c4a6e]/10 rounded-lg flex items-center justify-center mb-3">
-                  <svg className="w-5 h-5 text-[#0c4a6e]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {guides.map((g) => (
+              <Link
+                key={g.href}
+                href={g.href}
+                className="group flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-white transition-colors hover:border-brand-300 hover:bg-brand-50"
+              >
+                <div className="relative h-44 w-full flex-shrink-0">
+                  <Image
+                    src={g.image}
+                    alt={g.alt}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
                 </div>
-                <h3 className="font-semibold text-gray-900 mb-2">{svc.name}</h3>
-                <p className="text-sm text-gray-600">{svc.desc}</p>
+                <div className="flex flex-1 flex-col p-6">
+                  <div className="mb-3 flex flex-wrap items-center gap-2">
+                    <span className={`inline-block rounded-full px-2.5 py-0.5 text-xs font-semibold ${g.categoryColor}`}>{g.category}</span>
+                    <span className="text-xs text-gray-400">{g.readTime}</span>
+                  </div>
+                  <h3 className="mb-2 line-clamp-2 text-lg font-bold leading-snug text-gray-900 group-hover:text-brand-700">{g.title}</h3>
+                  <p className="flex-1 line-clamp-3 text-sm leading-relaxed text-gray-500">{g.excerpt}</p>
+                  <span className="mt-4 inline-block text-sm font-semibold text-brand-700 group-hover:underline">Read guide →</span>
+                </div>
               </Link>
             ))}
           </div>
-          <div className="text-center mt-8">
-            <Link href="/services" className="inline-block bg-[#0c4a6e] hover:bg-[#075985] text-white px-6 py-3 rounded-lg font-medium transition-colors">View All Services</Link>
-          </div>
         </div>
       </section>
 
-      {/* How It Works */}
-      <section className="max-w-6xl mx-auto px-4 py-16">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-[#0c4a6e] mb-3">How a Septic Service Works</h2>
-          <p className="text-gray-600 max-w-xl mx-auto">From your first call to completion, here is what to expect.</p>
-        </div>
-        <div className="grid md:grid-cols-5 gap-4">
-          {[
-            { step: "1", title: "Call or Schedule", desc: "Confirm tank size, location, access needs. Receive upfront price." },
-            { step: "2", title: "Arrive and Locate", desc: "Technician arrives with vacuum truck and locates buried lid if needed." },
-            { step: "3", title: "Pump and Inspect", desc: "Full tank evacuation. Baffles, walls, and effluent level inspected." },
-            { step: "4", title: "Dispose and Document", desc: "Waste transported to licensed facility. Written summary provided." },
-            { step: "5", title: "Maintenance Plan", desc: "Optional enrollment in Essential or Complete Care plan." },
-          ].map((item) => (
-            <div key={item.step} className="text-center">
-              <div className="w-10 h-10 bg-[#16a34a] text-white rounded-full flex items-center justify-center font-bold mx-auto mb-3">{item.step}</div>
-              <h3 className="font-semibold text-gray-900 mb-1 text-sm">{item.title}</h3>
-              <p className="text-xs text-gray-600">{item.desc}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="bg-[#0c4a6e] text-white py-16">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-3">What Homeowners Say</h2>
-            <p className="text-blue-200">4.9 stars across 200+ Google Reviews</p>
+      {/* FAQ Articles */}
+      <section className="bg-white py-14 sm:py-18">
+        <div className="container-max section-padding">
+          <div className="mb-10 text-center">
+            <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-brand-600">Homeowner Guide</p>
+            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">Common Septic Questions, Answered</h2>
+            <p className="mx-auto mt-3 max-w-2xl text-lg text-gray-600">
+              Quick, straightforward answers from licensed technicians who service hundreds of Central Valley systems every year.
+            </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            {testimonials.map((t) => (
-              <div key={t.name} className="bg-[#075985] rounded-xl p-6">
-                <div className="flex gap-0.5 mb-3">
-                  {[1,2,3,4,5].map((i) => (
-                    <svg key={i} className="w-4 h-4 text-[#16a34a]" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {faqs.slice(0, 3).map((faq) => (
+              <article key={faq.href} className="flex flex-col rounded-xl border border-gray-100 bg-gray-50 p-6 shadow-sm">
+                <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-brand-100 text-brand-700">
+                  {faq.icon}
                 </div>
-                <p className="text-blue-100 text-sm mb-4 italic">&ldquo;{t.quote}&rdquo;</p>
-                <div>
-                  <div className="font-semibold text-sm">{t.name}</div>
-                  <div className="text-xs text-blue-300">{t.city} &bull; {t.service}</div>
+                <h3 className="mb-3 text-base font-bold leading-snug text-gray-900">{faq.question}</h3>
+                <p className="flex-1 text-sm leading-relaxed text-gray-600">{faq.answer}</p>
+                <Link href={faq.href} className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-700 hover:text-brand-900 hover:underline">
+                  Read full guide{arrowIcon}
+                </Link>
+              </article>
+            ))}
+          </div>
+          <div className="mt-6 grid gap-6 sm:grid-cols-2">
+            {faqs.slice(3).map((faq) => (
+              <article key={faq.href} className="flex flex-col rounded-xl border border-gray-100 bg-gray-50 p-6 shadow-sm">
+                <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-brand-100 text-brand-700">
+                  {faq.icon}
+                </div>
+                <h3 className="mb-3 text-base font-bold leading-snug text-gray-900">{faq.question}</h3>
+                <p className="flex-1 text-sm leading-relaxed text-gray-600">{faq.answer}</p>
+                <Link href={faq.href} className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-700 hover:text-brand-900 hover:underline">
+                  Read full guide{arrowIcon}
+                </Link>
+              </article>
+            ))}
+          </div>
+          <div className="mt-8 text-center">
+            <Link href="/resources" className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-700 hover:text-brand-900">
+              Browse all septic guides and resources{arrowIcon}
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Health Assessment */}
+      <section className="bg-gray-50 py-14 sm:py-20">
+        <div className="container-max section-padding">
+          <div className="mb-10 text-center">
+            <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-brand-600">Homeowner Self-Assessment</p>
+            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">How Healthy Is Your Septic System?</h2>
+            <p className="mx-auto mt-3 max-w-2xl text-lg text-gray-600">
+              Match your situation to one of these three categories to know what action, if any, you should take next.
+            </p>
+          </div>
+          <div className="grid gap-6 md:grid-cols-3">
+            {healthCategories.map((cat) => (
+              <div key={cat.status} className={`flex flex-col overflow-hidden rounded-2xl border ${cat.border} bg-white shadow-sm`}>
+                <div className={`${cat.headerBg} px-6 py-4`}>
+                  <div className="flex items-center gap-3">
+                    <div className={`flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl ${cat.iconBg}`}>
+                      {cat.icon}
+                    </div>
+                    <span className={`inline-block rounded-full px-3 py-1 text-sm font-bold ${cat.badgeBg}`}>{cat.status}</span>
+                  </div>
+                  <p className="mt-3 text-sm font-semibold text-gray-800">{cat.subtitle}</p>
+                </div>
+                <ul className="flex flex-1 flex-col gap-3 px-6 py-5">
+                  {cat.items.map((item) => (
+                    <li key={item} className="flex items-start gap-2.5 text-sm leading-snug text-gray-700">
+                      {bulletIcon}
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <div className="border-t border-gray-100 px-6 py-4">
+                  <Link href={cat.href} className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-700 hover:text-brand-900 hover:underline">
+                    {cat.linkText}{arrowIcon}
+                  </Link>
                 </div>
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* FAQ Preview */}
-      <section className="max-w-4xl mx-auto px-4 py-16">
-        <div className="text-center mb-10">
-          <h2 className="text-3xl font-bold text-[#0c4a6e] mb-3">Common Septic Questions</h2>
-          <p className="text-gray-600">Straight answers to the questions homeowners ask most.</p>
-        </div>
-        <div className="space-y-4">
-          {faqs.map((faq) => (
-            <div key={faq.q} className="border border-gray-200 rounded-xl p-6">
-              <h3 className="font-semibold text-gray-900 mb-2">{faq.q}</h3>
-              <p className="text-gray-600 text-sm">{faq.a}</p>
-            </div>
-          ))}
-        </div>
-        <div className="text-center mt-8">
-          <Link href="/faq" className="inline-block bg-[#16a34a] hover:bg-[#15803d] text-white px-6 py-3 rounded-lg font-medium transition-colors">View All FAQs</Link>
-        </div>
-      </section>
-
-      {/* Emergency CTA */}
-      <section className="bg-red-50 border-t border-b border-red-100 py-12">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-2xl font-bold text-red-800 mb-3">Septic Emergency?</h2>
-          <p className="text-red-700 mb-6">Stop all water use immediately. Keep people and pets away from wet outdoor areas. Then read our emergency guide or call for help.</p>
-          <div className="flex flex-wrap gap-4 justify-center">
-            <Link href="/emergency" className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors">Read Emergency Guide</Link>
-            <a href="tel:5558675309" className="border border-red-600 text-red-700 hover:bg-red-600 hover:text-white px-6 py-3 rounded-lg font-semibold transition-colors">(555) 867-5309</a>
-          </div>
+          <p className="mt-8 text-center text-sm text-gray-500">
+            Not sure which category you&apos;re in?{" "}
+            <Link href="/resources" className="font-semibold text-brand-700 hover:underline">Browse our full homeowner resource center</Link>
+            {" "}or{" "}
+            <Link href="/faq" className="font-semibold text-brand-700 hover:underline">read our FAQ</Link>.
+          </p>
         </div>
       </section>
     </>
