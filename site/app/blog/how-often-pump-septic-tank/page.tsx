@@ -44,9 +44,11 @@ export default function HowOftenPumpPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <section className="bg-[#0c4a6e] text-white py-16">
         <div className="max-w-4xl mx-auto px-4">
-          <span className="inline-block bg-[#16a34a] text-white text-xs font-semibold px-3 py-1 rounded-full mb-4">Maintenance</span>
+          <nav className="flex items-center gap-2 text-sm text-blue-300 mb-4" aria-label="Breadcrumb"><a href="/" className="hover:text-white">Home</a><span aria-hidden="true"> / </span><a href="/blog" className="hover:text-white">Blog</a></nav>
+          <span className="inline-block bg-green-50 text-green-700 text-xs font-semibold px-3 py-1 rounded-full mb-4">Maintenance</span>
           <h1 className="text-4xl font-bold mb-4">How Often Should I Pump My Septic Tank?</h1>
           <p className="text-blue-200 text-lg">The answer depends on your household size and tank capacity. Here is how to figure out your schedule.</p>
+          <div className="mt-3 flex items-center gap-2 text-sm text-blue-300"><span>5 min read</span><span aria-hidden="true">&middot;</span><span>Updated March 2026</span></div>
         </div>
       </section>
 
@@ -92,7 +94,7 @@ export default function HowOftenPumpPage() {
           If you do not know when your tank was last pumped, look for these <Link href="/blog/warning-signs-septic-system-failing" className="text-[#0c4a6e] underline hover:text-[#075985]">warning signs of a failing septic system</Link>: slow or gurgling drains, sewage odors near the tank or drain field, unusually lush grass over the drain field, or wet or spongy ground. Any of these is a signal to call a technician.
         </p>
 
-        <div className="bg-[#0c4a6e]/5 rounded-xl p-6 mt-10 mb-6">
+        <div className="bg-teal-50 border border-teal-200 rounded-xl p-6 mt-10 mb-6">
           <h3 className="font-bold text-[#0c4a6e] mb-3">Pumping Frequency by Household Size (1,000-gallon tank)</h3>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">

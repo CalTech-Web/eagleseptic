@@ -42,9 +42,11 @@ export default function DrainFieldRepairCostPage() {
       }) }} />
       <section className="bg-[#0c4a6e] text-white py-16">
         <div className="max-w-4xl mx-auto px-4">
-          <span className="inline-block bg-[#16a34a] text-white text-xs font-semibold px-3 py-1 rounded-full mb-4">Costs</span>
+          <nav className="flex items-center gap-2 text-sm text-blue-300 mb-4" aria-label="Breadcrumb"><a href="/" className="hover:text-white">Home</a><span aria-hidden="true"> / </span><a href="/blog" className="hover:text-white">Blog</a></nav>
+          <span className="inline-block bg-purple-50 text-purple-700 text-xs font-semibold px-3 py-1 rounded-full mb-4">Cost &amp; Pricing</span>
           <h1 className="text-4xl font-bold mb-4">How Much Does Drain Field Repair Cost?</h1>
           <p className="text-blue-200 text-lg">The price range is wide because the answer depends on what failed, not just how big your yard is.</p>
+          <div className="mt-3 flex items-center gap-2 text-sm text-blue-300"><span>6 min read</span><span aria-hidden="true">&middot;</span><span>Updated March 2026</span></div>
         </div>
       </section>
 
@@ -92,7 +94,7 @@ export default function DrainFieldRepairCostPage() {
           A thorough inspection runs $175 to $400 and is worth doing before accepting any replacement quote. The cost of the inspection comes off the repair if you hire the same company, and it sets a baseline that prevents being oversold a full replacement when targeted repair would work.
         </p>
 
-        <div className="bg-[#0c4a6e]/5 rounded-xl p-6 mt-10 mb-6">
+        <div className="bg-teal-50 border border-teal-200 rounded-xl p-6 mt-10 mb-6">
           <h3 className="font-bold text-[#0c4a6e] mb-3">Repair Cost Reference</h3>
           <ul className="space-y-2">
             {[
@@ -100,7 +102,7 @@ export default function DrainFieldRepairCostPage() {
               "Partial lateral line repair: $1,500 to $5,000",
               "Full replacement: $10,000 to $30,000",
             ].map((item) => (
-              <li key={item} className="flex items-start gap-2 text-sm text-gray-700">
+              <li key={item} className="flex items-start gap-2 text-sm text-teal-800">
                 <svg className="w-4 h-4 text-[#16a34a] mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>

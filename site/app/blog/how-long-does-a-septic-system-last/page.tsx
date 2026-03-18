@@ -42,9 +42,11 @@ export default function HowLongSepticSystemLastPage() {
       }) }} />
       <section className="bg-[#0c4a6e] text-white py-16">
         <div className="max-w-4xl mx-auto px-4">
-          <span className="inline-block bg-[#16a34a] text-white text-xs font-semibold px-3 py-1 rounded-full mb-4">How It Works</span>
+          <nav className="flex items-center gap-2 text-sm text-blue-300 mb-4" aria-label="Breadcrumb"><a href="/" className="hover:text-white">Home</a><span aria-hidden="true"> / </span><a href="/blog" className="hover:text-white">Blog</a></nav>
+          <span className="inline-block bg-blue-50 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full mb-4">Education</span>
           <h1 className="text-4xl font-bold mb-4">How Long Does a Septic System Last?</h1>
           <p className="text-blue-200 text-lg">The tank and the drain field age differently. Most homeowners do not realize this until one of them fails.</p>
+          <div className="mt-3 flex items-center gap-2 text-sm text-blue-300"><span>7 min read</span><span aria-hidden="true">&middot;</span><span>Updated March 2026</span></div>
         </div>
       </section>
 
@@ -105,7 +107,7 @@ export default function HowLongSepticSystemLastPage() {
           That data tells you whether you are looking at a system with 10 years of solid life left or one approaching a major repair decision. Finding a biomat issue at year 18 rather than year 25 is the difference between a repair and a full replacement.
         </p>
 
-        <div className="bg-[#0c4a6e]/5 rounded-xl p-6 mt-10 mb-6">
+        <div className="bg-teal-50 border border-teal-200 rounded-xl p-6 mt-10 mb-6">
           <h3 className="font-bold text-[#0c4a6e] mb-3">Typical Lifespans by Component</h3>
           <ul className="space-y-2">
             {[
@@ -113,7 +115,7 @@ export default function HowLongSepticSystemLastPage() {
               "Steel tank: 15 to 25 years, inspect if over 20",
               "Drain field: 20 to 30 years depending on use and soil",
             ].map((item) => (
-              <li key={item} className="flex items-start gap-2 text-sm text-gray-700">
+              <li key={item} className="flex items-start gap-2 text-sm text-teal-800">
                 <svg className="w-4 h-4 text-[#16a34a] mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>

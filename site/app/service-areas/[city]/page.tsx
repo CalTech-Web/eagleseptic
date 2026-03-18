@@ -2,27 +2,127 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-const cityData: Record<string, { name: string; county: string; description: string }> = {
-  modesto: { name: "Modesto", county: "Stanislaus", description: "Modesto is the county seat of Stanislaus County and one of the largest cities in the Central Valley. Many surrounding rural and semi-rural properties rely on private septic systems." },
-  turlock: { name: "Turlock", county: "Stanislaus", description: "Turlock is a growing community in Stanislaus County with significant agricultural land and suburban development. Many residential properties on the outskirts use private septic systems." },
-  ceres: { name: "Ceres", county: "Stanislaus", description: "Ceres is a residential city adjacent to Modesto in Stanislaus County. Properties outside city sewer boundaries depend on private septic systems for wastewater management." },
-  riverbank: { name: "Riverbank", county: "Stanislaus", description: "Riverbank is a small city along the Stanislaus River with many rural and agricultural properties that use private septic systems." },
-  oakdale: { name: "Oakdale", county: "Stanislaus", description: "Oakdale, known as the Cowboy Capital of the World, has extensive rural and ranch properties throughout the area that rely on private septic systems." },
-  patterson: { name: "Patterson", county: "Stanislaus", description: "Patterson is a growing community in western Stanislaus County with a mix of residential and agricultural properties. Many outlying homes use private septic systems." },
-  waterford: { name: "Waterford", county: "Stanislaus", description: "Waterford is a small community along the Tuolumne River in Stanislaus County. Rural properties throughout the area depend on septic systems." },
-  hughson: { name: "Hughson", county: "Stanislaus", description: "Hughson is a small agricultural community in Stanislaus County. Many properties in and around Hughson use private septic systems." },
-  newman: { name: "Newman", county: "Stanislaus", description: "Newman is a small city in western Stanislaus County. Surrounding agricultural and rural residential properties commonly use private septic systems." },
-  denair: { name: "Denair", county: "Stanislaus", description: "Denair is an unincorporated community in Stanislaus County. Properties in this rural area typically rely on private septic systems." },
-  escalon: { name: "Escalon", county: "San Joaquin", description: "Escalon is a small city in San Joaquin County. Rural and semi-rural properties throughout the area use private septic systems." },
-  stockton: { name: "Stockton", county: "San Joaquin", description: "Stockton is the largest city in San Joaquin County. While much of the city is on municipal sewer, many outlying properties depend on private septic systems." },
-  tracy: { name: "Tracy", county: "San Joaquin", description: "Tracy is a fast-growing city in San Joaquin County. Properties on the outskirts and in rural areas use private septic systems." },
-  manteca: { name: "Manteca", county: "San Joaquin", description: "Manteca is a growing San Joaquin County community with residential expansion into areas served by private septic systems." },
-  ripon: { name: "Ripon", county: "San Joaquin", description: "Ripon is a small city in San Joaquin County known for its almond orchards. Many surrounding rural and agricultural properties use septic systems." },
-  atwater: { name: "Atwater", county: "Merced", description: "Atwater is a city in Merced County. Properties outside city limits and in surrounding rural areas typically use private septic systems." },
-  merced: { name: "Merced", county: "Merced", description: "Merced is the county seat of Merced County and home to UC Merced. Rural and outlying residential properties in the area depend on private septic systems." },
-  "los-banos": { name: "Los Banos", county: "Merced", description: "Los Banos is a city in western Merced County. The surrounding agricultural area includes many properties served by private septic systems." },
-  livingston: { name: "Livingston", county: "Merced", description: "Livingston is a small city in Merced County. Properties outside the city core in this agricultural area commonly use septic systems." },
-  gustine: { name: "Gustine", county: "Merced", description: "Gustine is a small city in western Merced County. Rural properties throughout the area rely on private septic systems for wastewater treatment." },
+const cityData: Record<string, { name: string; county: string; description: string; nearbyCities: string[] }> = {
+  modesto: {
+    name: "Modesto",
+    county: "Stanislaus",
+    description: "Modesto is the county seat of Stanislaus County and one of the largest cities in the Central Valley. Many surrounding rural and semi-rural properties rely on private septic systems.",
+    nearbyCities: ["Turlock", "Ceres", "Riverbank", "Oakdale", "Patterson", "Waterford", "Hughson"],
+  },
+  turlock: {
+    name: "Turlock",
+    county: "Stanislaus",
+    description: "Turlock is a growing community in Stanislaus County with significant agricultural land and suburban development. Many residential properties on the outskirts use private septic systems.",
+    nearbyCities: ["Modesto", "Ceres", "Denair", "Waterford", "Merced"],
+  },
+  ceres: {
+    name: "Ceres",
+    county: "Stanislaus",
+    description: "Ceres is a residential city adjacent to Modesto in Stanislaus County. Properties outside city sewer boundaries depend on private septic systems for wastewater management.",
+    nearbyCities: ["Modesto", "Turlock", "Riverbank", "Hughson"],
+  },
+  riverbank: {
+    name: "Riverbank",
+    county: "Stanislaus",
+    description: "Riverbank is a small city along the Stanislaus River with many rural and agricultural properties that use private septic systems.",
+    nearbyCities: ["Modesto", "Oakdale", "Escalon", "Ceres"],
+  },
+  oakdale: {
+    name: "Oakdale",
+    county: "Stanislaus",
+    description: "Oakdale, known as the Cowboy Capital of the World, has extensive rural and ranch properties throughout the area that rely on private septic systems.",
+    nearbyCities: ["Riverbank", "Modesto", "Escalon", "Waterford"],
+  },
+  patterson: {
+    name: "Patterson",
+    county: "Stanislaus",
+    description: "Patterson is a growing community in western Stanislaus County with a mix of residential and agricultural properties. Many outlying homes use private septic systems.",
+    nearbyCities: ["Newman", "Modesto", "Tracy", "Gustine"],
+  },
+  waterford: {
+    name: "Waterford",
+    county: "Stanislaus",
+    description: "Waterford is a small community along the Tuolumne River in Stanislaus County. Rural properties throughout the area depend on septic systems.",
+    nearbyCities: ["Modesto", "Turlock", "Oakdale", "Ceres"],
+  },
+  hughson: {
+    name: "Hughson",
+    county: "Stanislaus",
+    description: "Hughson is a small agricultural community in Stanislaus County. Many properties in and around Hughson use private septic systems.",
+    nearbyCities: ["Modesto", "Turlock", "Riverbank", "Denair"],
+  },
+  newman: {
+    name: "Newman",
+    county: "Stanislaus",
+    description: "Newman is a small city in western Stanislaus County. Surrounding agricultural and rural residential properties commonly use private septic systems.",
+    nearbyCities: ["Patterson", "Gustine", "Los Banos", "Modesto"],
+  },
+  denair: {
+    name: "Denair",
+    county: "Stanislaus",
+    description: "Denair is an unincorporated community in Stanislaus County. Properties in this rural area typically rely on private septic systems.",
+    nearbyCities: ["Turlock", "Modesto", "Hughson", "Ceres"],
+  },
+  escalon: {
+    name: "Escalon",
+    county: "San Joaquin",
+    description: "Escalon is a small city in San Joaquin County. Rural and semi-rural properties throughout the area use private septic systems.",
+    nearbyCities: ["Ripon", "Manteca", "Oakdale", "Riverbank"],
+  },
+  stockton: {
+    name: "Stockton",
+    county: "San Joaquin",
+    description: "Stockton is the largest city in San Joaquin County. While much of the city is on municipal sewer, many outlying properties depend on private septic systems.",
+    nearbyCities: ["Manteca", "Tracy", "Ripon", "Escalon"],
+  },
+  tracy: {
+    name: "Tracy",
+    county: "San Joaquin",
+    description: "Tracy is a fast-growing city in San Joaquin County. Properties on the outskirts and in rural areas use private septic systems.",
+    nearbyCities: ["Stockton", "Manteca", "Patterson", "Ripon"],
+  },
+  manteca: {
+    name: "Manteca",
+    county: "San Joaquin",
+    description: "Manteca is a growing San Joaquin County community with residential expansion into areas served by private septic systems.",
+    nearbyCities: ["Stockton", "Ripon", "Tracy", "Escalon"],
+  },
+  ripon: {
+    name: "Ripon",
+    county: "San Joaquin",
+    description: "Ripon is a small city in San Joaquin County known for its almond orchards. Many surrounding rural and agricultural properties use septic systems.",
+    nearbyCities: ["Manteca", "Escalon", "Stockton", "Modesto"],
+  },
+  atwater: {
+    name: "Atwater",
+    county: "Merced",
+    description: "Atwater is a city in Merced County. Properties outside city limits and in surrounding rural areas typically use private septic systems.",
+    nearbyCities: ["Merced", "Livingston", "Turlock", "Gustine"],
+  },
+  merced: {
+    name: "Merced",
+    county: "Merced",
+    description: "Merced is the county seat of Merced County and home to UC Merced. Rural and outlying residential properties in the area depend on private septic systems.",
+    nearbyCities: ["Atwater", "Los Banos", "Livingston", "Gustine"],
+  },
+  "los-banos": {
+    name: "Los Banos",
+    county: "Merced",
+    description: "Los Banos is a city in western Merced County. The surrounding agricultural area includes many properties served by private septic systems.",
+    nearbyCities: ["Gustine", "Merced", "Newman", "Patterson"],
+  },
+  livingston: {
+    name: "Livingston",
+    county: "Merced",
+    description: "Livingston is a small city in Merced County. Properties outside the city core in this agricultural area commonly use septic systems.",
+    nearbyCities: ["Atwater", "Merced", "Turlock", "Denair"],
+  },
+  gustine: {
+    name: "Gustine",
+    county: "Merced",
+    description: "Gustine is a small city in western Merced County. Rural properties throughout the area rely on private septic systems for wastewater treatment.",
+    nearbyCities: ["Los Banos", "Newman", "Patterson", "Merced"],
+  },
 };
 
 export async function generateStaticParams() {
@@ -74,6 +174,14 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
     ],
   };
 
+  // Hero stats with consistent numeric pattern
+  const heroStats = [
+    { value: "18+", label: "Years Experience" },
+    { value: "4,200+", label: "Tanks Serviced" },
+    { value: "4.9★", label: "Google Rating" },
+    { value: "100%", label: "Licensed & Insured" },
+  ];
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }} />
@@ -82,6 +190,16 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
           <Link href="/service-areas" className="text-blue-300 text-sm hover:text-white mb-4 inline-block">← All Service Areas</Link>
           <h1 className="text-4xl font-bold mb-4">Septic Service in {data.name}, CA</h1>
           <p className="text-blue-200 text-lg">{data.county} County, California</p>
+
+          {/* Hero stat boxes */}
+          <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {heroStats.map((s) => (
+              <div key={s.label} className="rounded-lg bg-white/10 px-4 py-3 text-center">
+                <div className="text-xl font-bold text-green-400">{s.value}</div>
+                <div className="text-xs text-blue-200 mt-0.5">{s.label}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -124,10 +242,34 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
           ))}
         </ul>
 
+        {/* Also Serving Nearby Communities - pill badge style */}
+        {data.nearbyCities.length > 0 && (
+          <div className="mb-8">
+            <h2 className="text-xl font-bold text-[#0c4a6e] mb-3">Also Serving Nearby Communities</h2>
+            <div className="flex flex-wrap gap-2">
+              {data.nearbyCities.map((nearCity) => {
+                const slug = nearCity.toLowerCase().replace(/\s+/g, "-");
+                return (
+                  <Link
+                    key={nearCity}
+                    href={`/service-areas/${slug}`}
+                    className="rounded-full bg-[#0c4a6e]/5 border border-[#0c4a6e]/20 px-3 py-1.5 text-sm font-medium text-[#0c4a6e] hover:bg-[#0c4a6e] hover:text-white hover:border-[#0c4a6e] transition-colors"
+                  >
+                    {nearCity}
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        )}
+
         <div className="bg-[#0c4a6e] text-white rounded-xl p-6 text-center">
           <h3 className="font-bold text-xl mb-2">Schedule Service in {data.name}</h3>
-          <p className="text-blue-200 mb-4">Free upfront quote. No service call fee for routine work.</p>
-          <a href="tel:5558675309" className="inline-block bg-[#16a34a] hover:bg-[#15803d] text-white px-6 py-3 rounded-lg font-bold transition-colors">(555) 867-5309</a>
+          <p className="text-blue-200 mb-5">Free upfront quote. No service call fee for routine work.</p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <a href="tel:5558675309" className="inline-block bg-[#16a34a] hover:bg-[#15803d] text-white px-6 py-3 rounded-lg font-bold transition-colors">(555) 867-5309</a>
+            <Link href="/services" className="inline-block border border-white text-white hover:bg-white hover:text-[#0c4a6e] px-6 py-3 rounded-lg font-semibold transition-colors">View All Services</Link>
+          </div>
         </div>
       </section>
     </>

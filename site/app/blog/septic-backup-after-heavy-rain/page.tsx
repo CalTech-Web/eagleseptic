@@ -42,9 +42,11 @@ export default function SepticBackupRainPage() {
       }) }} />
       <section className="bg-[#0c4a6e] text-white py-16">
         <div className="max-w-4xl mx-auto px-4">
-          <span className="inline-block bg-[#16a34a] text-white text-xs font-semibold px-3 py-1 rounded-full mb-4">Troubleshooting</span>
+          <nav className="flex items-center gap-2 text-sm text-blue-300 mb-4" aria-label="Breadcrumb"><a href="/" className="hover:text-white">Home</a><span aria-hidden="true"> / </span><a href="/blog" className="hover:text-white">Blog</a></nav>
+          <span className="inline-block bg-orange-50 text-orange-700 text-xs font-semibold px-3 py-1 rounded-full mb-4">Troubleshooting</span>
           <h1 className="text-4xl font-bold mb-4">Septic Backup After Heavy Rain: Why It Happens and What to Do</h1>
           <p className="text-blue-200 text-lg">Rain and septic systems have a complicated relationship. Here is what to do in the first 30 minutes.</p>
+          <div className="mt-3 flex items-center gap-2 text-sm text-blue-300"><span>7 min read</span><span aria-hidden="true">&middot;</span><span>Updated March 2026</span></div>
         </div>
       </section>
 

@@ -35,6 +35,29 @@ const pageSchema = {
   ],
 };
 
+const howItWorksSteps = [
+  {
+    number: "1",
+    title: "Call or Schedule",
+    desc: "You call or schedule online. We confirm tank size, location, and access needs, then give you an upfront price before anything else.",
+  },
+  {
+    number: "2",
+    title: "Arrive and Locate",
+    desc: "Our technician arrives with a vacuum truck, locates the tank, and excavates a buried lid if needed.",
+  },
+  {
+    number: "3",
+    title: "Pump and Inspect",
+    desc: "We fully evacuate the tank, inspect baffles and walls, photograph any issues, and explain exactly what we found.",
+  },
+  {
+    number: "4",
+    title: "Document and Dispose",
+    desc: "Waste is transported to a licensed facility. You receive a written summary with sludge readings and your next recommended service date.",
+  },
+];
+
 export default function SepticTankPumpingPage() {
   return (
     <>
@@ -51,7 +74,7 @@ export default function SepticTankPumpingPage() {
         </div>
       </section>
 
-      <article className="max-w-3xl mx-auto px-4 py-12">
+      <article className="max-w-3xl mx-auto px-4 pt-10 pb-12">
         <h2 className="text-2xl font-bold text-[#0c4a6e] mb-3">What Is Septic Tank Pumping?</h2>
         <p className="text-gray-700 mb-4 leading-relaxed">Septic tank pumping is the process of removing accumulated sludge and scum from your septic tank using a vacuum truck. Over time, solids that cannot be broken down by bacteria build up in the tank. When the sludge layer reaches the outlet baffle, solids begin entering the drain field, causing irreversible damage. Regular pumping prevents this entirely.</p>
 
@@ -74,6 +97,22 @@ export default function SepticTankPumpingPage() {
             </li>
           ))}
         </ul>
+
+        {/* How It Works steps with visible card borders */}
+        <h2 className="text-2xl font-bold text-[#0c4a6e] mb-4 mt-8">How It Works</h2>
+        <div className="grid sm:grid-cols-2 gap-4 mb-8">
+          {howItWorksSteps.map((step) => (
+            <div key={step.number} className="flex gap-4 rounded-xl border border-gray-200 bg-gray-50 p-5">
+              <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-[#0c4a6e] text-white font-bold text-sm">
+                {step.number}
+              </div>
+              <div>
+                <h3 className="font-semibold text-gray-900 mb-1">{step.title}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">{step.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
 
         <h2 className="text-2xl font-bold text-[#0c4a6e] mb-3 mt-8">How Often to Pump</h2>
         <div className="overflow-x-auto mb-6">
@@ -106,6 +145,25 @@ export default function SepticTankPumpingPage() {
         <h2 className="text-2xl font-bold text-[#0c4a6e] mb-3 mt-8">What to Expect on Service Day</h2>
         <p className="text-gray-700 mb-4 leading-relaxed">The technician arrives with a vacuum truck and locates the tank lid. If the lid is buried, they will probe the yard and excavate by hand to expose it. The pump hose is lowered into the tank and the vacuum removes all contents. The technician inspects the baffles and tank walls, notes any issues, and provides a written summary before leaving. The entire process typically takes 45 minutes to 90 minutes.</p>
 
+        <h2 className="text-2xl font-bold text-[#0c4a6e] mb-3 mt-8">Warning Signs You Need Service Now</h2>
+        <ul className="space-y-3 mb-6">
+          {[
+            "Slow drains throughout the house at the same time",
+            "Gurgling sounds in toilets or drains",
+            "Sewage odors indoors or near the drain field",
+            "Unusually lush or fast-growing grass over the drain field",
+            "Wet or spongy ground near the tank or drain field",
+            "Tank was last pumped more than 5 years ago",
+          ].map((sign) => (
+            <li key={sign} className="flex items-start gap-3 text-gray-700">
+              <svg className="w-6 h-6 text-amber-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+              </svg>
+              {sign}
+            </li>
+          ))}
+        </ul>
+
         <h2 className="text-2xl font-bold text-[#0c4a6e] mb-3 mt-8">Cost Factors</h2>
         <p className="text-gray-700 mb-4 leading-relaxed">The typical cost for residential septic pumping in the Modesto and Central Valley area is $300 to $550. Price varies based on tank size, the amount of sludge present, and whether the lid needs to be excavated. There is no charge for finding a lid that is accessible. Upfront quotes are provided before any work begins.</p>
 
@@ -116,7 +174,8 @@ export default function SepticTankPumpingPage() {
 
         <div className="flex flex-wrap gap-4 mt-8">
           <a href="tel:5558675309" className="bg-[#16a34a] hover:bg-[#15803d] text-white px-5 py-2.5 rounded-lg font-medium transition-colors text-sm">Schedule Pumping</a>
-          <Link href="/services" className="border border-[#0c4a6e] text-[#0c4a6e] hover:bg-[#0c4a6e] hover:text-white px-5 py-2.5 rounded-lg font-medium transition-colors text-sm">All Services</Link>
+          <Link href="/pricing" className="border border-[#0c4a6e] text-[#0c4a6e] hover:bg-[#0c4a6e] hover:text-white px-5 py-2.5 rounded-lg font-medium transition-colors text-sm">View Pricing</Link>
+          <Link href="/services" className="border border-gray-300 text-gray-600 hover:bg-gray-50 px-5 py-2.5 rounded-lg font-medium transition-colors text-sm">All Services</Link>
         </div>
       </article>
     </>

@@ -42,9 +42,11 @@ export default function DoSepticAdditivesWorkPage() {
       }) }} />
       <section className="bg-[#0c4a6e] text-white py-16">
         <div className="max-w-4xl mx-auto px-4">
-          <span className="inline-block bg-[#16a34a] text-white text-xs font-semibold px-3 py-1 rounded-full mb-4">Maintenance</span>
+          <nav className="flex items-center gap-2 text-sm text-blue-300 mb-4" aria-label="Breadcrumb"><a href="/" className="hover:text-white">Home</a><span aria-hidden="true"> / </span><a href="/blog" className="hover:text-white">Blog</a></nav>
+          <span className="inline-block bg-green-50 text-green-700 text-xs font-semibold px-3 py-1 rounded-full mb-4">Maintenance</span>
           <h1 className="text-4xl font-bold mb-4">Do Septic Additives Actually Work?</h1>
           <p className="text-blue-200 text-lg">The cleaning aisle at every Central Valley hardware store has a shelf of products promising to restore your system. The evidence on whether they help is less enthusiastic than the labels.</p>
+          <div className="mt-3 flex items-center gap-2 text-sm text-blue-300"><span>5 min read</span><span aria-hidden="true">&middot;</span><span>Updated March 2026</span></div>
         </div>
       </section>
 
@@ -89,7 +91,7 @@ export default function DoSepticAdditivesWorkPage() {
           Controlling what enters the system matters just as much. Flushable wipes, grease poured down drains, and large amounts of bleach do more damage than any additive can offset. The additive aisle is not entirely wrong that bacterial balance matters. It just cannot sell you the thing that actually preserves it, which is a pump-out on schedule and a household that treats the drain like what it is.
         </p>
 
-        <div className="bg-[#0c4a6e]/5 rounded-xl p-6 mt-10 mb-6">
+        <div className="bg-teal-50 border border-teal-200 rounded-xl p-6 mt-10 mb-6">
           <h3 className="font-bold text-[#0c4a6e] mb-3">What the Evidence Supports</h3>
           <ul className="space-y-2">
             {[
@@ -97,7 +99,7 @@ export default function DoSepticAdditivesWorkPage() {
               "Chemical additives carry real risk of soil and drain field damage",
               "No additive removes solids, only pumping does that",
             ].map((item) => (
-              <li key={item} className="flex items-start gap-2 text-sm text-gray-700">
+              <li key={item} className="flex items-start gap-2 text-sm text-teal-800">
                 <svg className="w-4 h-4 text-[#16a34a] mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>

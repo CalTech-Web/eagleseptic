@@ -42,9 +42,11 @@ export default function WhatNotToFlushPage() {
       }) }} />
       <section className="bg-[#0c4a6e] text-white py-16">
         <div className="max-w-4xl mx-auto px-4">
-          <span className="inline-block bg-[#16a34a] text-white text-xs font-semibold px-3 py-1 rounded-full mb-4">Maintenance</span>
+          <nav className="flex items-center gap-2 text-sm text-blue-300 mb-4" aria-label="Breadcrumb"><a href="/" className="hover:text-white">Home</a><span aria-hidden="true"> / </span><a href="/blog" className="hover:text-white">Blog</a></nav>
+          <span className="inline-block bg-green-50 text-green-700 text-xs font-semibold px-3 py-1 rounded-full mb-4">Maintenance</span>
           <h1 className="text-4xl font-bold mb-4">What Not to Flush When You Have a Septic System</h1>
           <p className="text-blue-200 text-lg">Your toilet is not a trash can. What goes in stays in, until a technician pumps it out or it clogs something expensive.</p>
+          <div className="mt-3 flex items-center gap-2 text-sm text-blue-300"><span>5 min read</span><span aria-hidden="true">&middot;</span><span>Updated March 2026</span></div>
         </div>
       </section>
 
@@ -104,7 +106,7 @@ export default function WhatNotToFlushPage() {
           Products marketed as septic system treatments, bacterial additives, enzyme boosters, and the rest claim to enhance tank performance. The research on these is thin. A healthy septic tank already contains the bacteria it needs to function. What additives cannot do is replace pumping. Solids must be physically removed. No powder or liquid poured down a drain changes that. Some chemical additives have been shown to damage the drain field. Save the money and spend it on your next pump-out.
         </p>
 
-        <div className="bg-[#0c4a6e]/5 rounded-xl p-6 mt-10 mb-6">
+        <div className="bg-teal-50 border border-teal-200 rounded-xl p-6 mt-10 mb-6">
           <h3 className="font-bold text-[#0c4a6e] mb-3">Quick Reference: Keep Out of Your System</h3>
           <ul className="space-y-2">
             {[
@@ -112,7 +114,7 @@ export default function WhatNotToFlushPage() {
               "Feminine hygiene products",
               "Paper towels or facial tissue",
             ].map((item) => (
-              <li key={item} className="flex items-start gap-2 text-sm text-gray-700">
+              <li key={item} className="flex items-start gap-2 text-sm text-teal-800">
                 <svg className="w-4 h-4 text-red-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
@@ -126,7 +128,7 @@ export default function WhatNotToFlushPage() {
               "Cooking grease, coffee grounds, or food solids",
               "Cat litter of any kind",
             ].map((item) => (
-              <li key={item} className="flex items-start gap-2 text-sm text-gray-700">
+              <li key={item} className="flex items-start gap-2 text-sm text-teal-800">
                 <svg className="w-4 h-4 text-red-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>

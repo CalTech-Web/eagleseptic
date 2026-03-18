@@ -42,9 +42,11 @@ export default function SepticEmergencyPage() {
       }) }} />
       <section className="bg-red-800 text-white py-16">
         <div className="max-w-4xl mx-auto px-4">
-          <span className="inline-block bg-red-600 text-white text-xs font-semibold px-3 py-1 rounded-full mb-4">Emergency</span>
+          <nav className="flex items-center gap-2 text-sm text-blue-300 mb-4" aria-label="Breadcrumb"><a href="/" className="hover:text-white">Home</a><span aria-hidden="true"> / </span><a href="/blog" className="hover:text-white">Blog</a></nav>
+          <span className="inline-block bg-red-50 text-red-700 text-xs font-semibold px-3 py-1 rounded-full mb-4">Emergency</span>
           <h1 className="text-4xl font-bold mb-4">Septic Emergency: What to Do First</h1>
           <p className="text-red-200 text-lg">If sewage is backing up or surfacing, take these steps immediately.</p>
+          <div className="mt-3 flex items-center gap-2 text-sm text-blue-300"><span>4 min read</span><span aria-hidden="true">&middot;</span><span>Updated March 2026</span></div>
         </div>
       </section>
 

@@ -25,7 +25,7 @@ const guides = [
     image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&h=630&q=80&fit=crop&crop=center",
     alt: "Residential neighborhood illustrating the choice between septic and sewer systems",
     category: "Education",
-    categoryColor: "bg-cyan-50 text-cyan-700",
+    categoryColor: "bg-blue-50 text-blue-700",
     readTime: "8 min read",
     title: "Septic System vs. Sewer System: Key Differences, Costs, and What's Right for Your Home",
     excerpt: "If you're buying a home or building on a rural property, you'll face this question: septic or sewer? Both systems handle wastewater, but they work differently, cost differently, and require different levels of ongoing involvement from homeowners.",
@@ -35,7 +35,7 @@ const guides = [
     image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&h=630&q=80&fit=crop&crop=center",
     alt: "Green grass lawn over a residential septic drain field on a sunny day",
     category: "Education",
-    categoryColor: "bg-cyan-50 text-cyan-700",
+    categoryColor: "bg-blue-50 text-blue-700",
     readTime: "10 min read",
     title: "How Does a Septic System Work? A Complete Guide for Homeowners",
     excerpt: "About 1 in 5 U.S. homes runs on a septic system, but most homeowners couldn't explain how one actually works. This guide walks through every stage: what happens inside the tank, how the drain field filters effluent, why bacteria are essential, and what your role is in keeping the system healthy.",
@@ -306,8 +306,9 @@ export default function HomePage() {
               Free septic system information for homeowners
             </div>
             <h1 className="mb-6 text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-6xl">
-              Understand Your{" "}
+              Your Complete{" "}
               <span className="text-accent-400">Septic System</span>
+              {" "}Guide
             </h1>
             <p className="mb-8 text-lg text-brand-100 sm:text-xl">
               Plain-language guides, maintenance tips, and troubleshooting help for homeowners with septic systems. No jargon, no sales pitch.
@@ -316,7 +317,7 @@ export default function HomePage() {
               <Link href="/resources" className="btn-primary text-base">Browse All Guides</Link>
               <Link href="/blog" className="btn-secondary text-base">Read the Blog</Link>
             </div>
-            <div className="mt-12 flex flex-wrap items-center justify-center gap-6 text-sm text-brand-100">
+            <div className="mt-12 flex flex-wrap items-center justify-center gap-6 text-base text-brand-100">
               <div className="flex items-center gap-2">{checkIcon}Free to Read</div>
               <div className="flex items-center gap-2">{checkIcon}No Ads</div>
               <div className="flex items-center gap-2">{checkIcon}Homeowner Focused</div>
@@ -341,7 +342,7 @@ export default function HomePage() {
       </section>
 
       {/* How It Works */}
-      <section className="bg-white py-14 sm:py-18">
+      <section className="bg-white">
         <div className="container-max section-padding">
           <div className="mb-10 text-center">
             <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-brand-600">Simple Process</p>

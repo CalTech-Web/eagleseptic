@@ -42,9 +42,11 @@ export default function WarningSeparatePage() {
       }) }} />
       <section className="bg-[#0c4a6e] text-white py-16">
         <div className="max-w-4xl mx-auto px-4">
-          <span className="inline-block bg-[#16a34a] text-white text-xs font-semibold px-3 py-1 rounded-full mb-4">Troubleshooting</span>
+          <nav className="flex items-center gap-2 text-sm text-blue-300 mb-4" aria-label="Breadcrumb"><a href="/" className="hover:text-white">Home</a><span aria-hidden="true"> / </span><a href="/blog" className="hover:text-white">Blog</a></nav>
+          <span className="inline-block bg-orange-50 text-orange-700 text-xs font-semibold px-3 py-1 rounded-full mb-4">Troubleshooting</span>
           <h1 className="text-4xl font-bold mb-4">Warning Signs of a Failing Septic System</h1>
           <p className="text-blue-200 text-lg">Know the early signals before a small problem turns into a $15,000 drain field replacement.</p>
+          <div className="mt-3 flex items-center gap-2 text-sm text-blue-300"><span>6 min read</span><span aria-hidden="true">&middot;</span><span>Updated March 2026</span></div>
         </div>
       </section>
 
@@ -87,7 +89,7 @@ export default function WarningSeparatePage() {
           If you do not know when your tank was last pumped, or the system is more than 20 to 30 years old, schedule an inspection. Our guide on <Link href="/blog/how-often-pump-septic-tank" className="text-[#0c4a6e] underline hover:text-[#075985]">how often to pump a septic tank</Link> explains the recommended intervals by household size. Older systems, especially those with concrete tanks or distribution boxes, may have cracked components that are not immediately visible. If the tank is overdue and the drain field smells or is soggy, also read our article on <Link href="/blog/signs-drain-field-failing" className="text-[#0c4a6e] underline hover:text-[#075985]">signs a drain field is failing</Link>.
         </p>
 
-        <div className="bg-[#0c4a6e]/5 rounded-xl p-6 mt-10 mb-6">
+        <div className="bg-teal-50 border border-teal-200 rounded-xl p-6 mt-10 mb-6">
           <h3 className="font-bold text-[#0c4a6e] mb-3">Quick Reference: When to Call</h3>
           <ul className="space-y-2">
             {[
@@ -98,7 +100,7 @@ export default function WarningSeparatePage() {
               "Sewage backing up into fixtures",
               "System has not been pumped in 5 or more years",
             ].map((item) => (
-              <li key={item} className="flex items-start gap-2 text-sm text-gray-700">
+              <li key={item} className="flex items-start gap-2 text-sm text-teal-800">
                 <svg className="w-4 h-4 text-[#16a34a] mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>

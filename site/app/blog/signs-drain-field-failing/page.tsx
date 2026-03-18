@@ -42,9 +42,11 @@ export default function SignsDrainFieldFailingPage() {
       }) }} />
       <section className="bg-[#0c4a6e] text-white py-16">
         <div className="max-w-4xl mx-auto px-4">
-          <span className="inline-block bg-[#16a34a] text-white text-xs font-semibold px-3 py-1 rounded-full mb-4">Troubleshooting</span>
+          <nav className="flex items-center gap-2 text-sm text-blue-300 mb-4" aria-label="Breadcrumb"><a href="/" className="hover:text-white">Home</a><span aria-hidden="true"> / </span><a href="/blog" className="hover:text-white">Blog</a></nav>
+          <span className="inline-block bg-orange-50 text-orange-700 text-xs font-semibold px-3 py-1 rounded-full mb-4">Troubleshooting</span>
           <h1 className="text-4xl font-bold mb-4">Signs Your Drain Field Is Failing</h1>
           <p className="text-blue-200 text-lg">Most homeowners misread the early signs as yard drainage issues and wait. By the time they call, the repair window has often closed.</p>
+          <div className="mt-3 flex items-center gap-2 text-sm text-blue-300"><span>6 min read</span><span aria-hidden="true">&middot;</span><span>Updated March 2026</span></div>
         </div>
       </section>
 
@@ -96,7 +98,7 @@ export default function SignsDrainFieldFailingPage() {
           If you have surfacing sewage, call for emergency service. In Stanislaus, Merced, and San Joaquin counties, surfacing sewage may require notification to the county environmental health department. Do not assume it will drain on its own.
         </p>
 
-        <div className="bg-[#0c4a6e]/5 rounded-xl p-6 mt-10 mb-6">
+        <div className="bg-teal-50 border border-teal-200 rounded-xl p-6 mt-10 mb-6">
           <h3 className="font-bold text-[#0c4a6e] mb-3">Early Warning Checklist</h3>
           <ul className="space-y-2">
             {[
@@ -104,7 +106,7 @@ export default function SignsDrainFieldFailingPage() {
               "Green grass stripes in summer follow the leach lines, fed from below",
               "Multiple slow drains together signal downstream failure, not a local clog",
             ].map((item) => (
-              <li key={item} className="flex items-start gap-2 text-sm text-gray-700">
+              <li key={item} className="flex items-start gap-2 text-sm text-teal-800">
                 <svg className="w-4 h-4 text-[#16a34a] mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>

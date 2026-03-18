@@ -1,5 +1,5 @@
-import Link from "next/link";
 import type { Metadata } from "next";
+import FAQClient from "./FAQClient";
 
 export const metadata: Metadata = {
   title: "Septic System FAQ - Eagle Septic Guide",
@@ -89,26 +89,7 @@ export default function FAQPage() {
           <p className="text-blue-200 text-lg">Straight answers to the questions homeowners ask most.</p>
         </div>
       </section>
-
-      <section className="max-w-3xl mx-auto px-4 py-16">
-        <div className="space-y-6">
-          {faqs.map((faq) => (
-            <div key={faq.q} className="border border-gray-200 rounded-xl p-6">
-              <h2 className="font-bold text-gray-900 mb-3 text-lg">{faq.q}</h2>
-              <p className="text-gray-600 leading-relaxed">{faq.a}</p>
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-12 bg-[#0c4a6e]/5 rounded-xl p-6 text-center">
-          <h3 className="font-bold text-[#0c4a6e] mb-2">Have a question not answered here?</h3>
-          <p className="text-gray-600 text-sm mb-4">Browse our full guide library or read the blog for more in-depth coverage.</p>
-          <div className="flex flex-wrap gap-3 justify-center">
-            <Link href="/resources" className="bg-[#16a34a] hover:bg-[#15803d] text-white px-5 py-2.5 rounded-lg font-medium transition-colors text-sm">Browse All Guides</Link>
-            <Link href="/blog" className="border border-[#0c4a6e] text-[#0c4a6e] hover:bg-[#0c4a6e] hover:text-white px-5 py-2.5 rounded-lg font-medium transition-colors text-sm">Read the Blog</Link>
-          </div>
-        </div>
-      </section>
+      <FAQClient />
     </>
   );
 }
