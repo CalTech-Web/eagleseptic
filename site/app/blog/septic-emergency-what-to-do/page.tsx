@@ -5,11 +5,32 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Septic Emergency: What to Do First - Eagle Septic Guide",
   description: "Sewage backup is a health emergency. Learn the first steps to take, what not to do, and when to call a professional for immediate help.",
+  openGraph: {
+    title: "Septic Emergency: What to Do First",
+    description: "Sewage backup is a health emergency. Learn the first steps to take, what not to do, and when to call a professional for immediate help.",
+    url: "https://eaglesepticpumping.com/blog/septic-emergency-what-to-do",
+    type: "article",
+    siteName: "Eagle Septic Guide",
+  },
 };
 
 export default function SepticEmergencyPage() {
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "Septic Emergency: What to Do First",
+    description: "Sewage backup is a health emergency. Learn the first steps to take, what not to do, and when to call a professional for immediate help.",
+    url: "https://eaglesepticpumping.com/blog/septic-emergency-what-to-do",
+    author: { "@type": "Organization", name: "Eagle Septic Guide", url: "https://eaglesepticpumping.com" },
+    publisher: { "@type": "Organization", name: "Eagle Septic Guide", url: "https://eaglesepticpumping.com" },
+    datePublished: "2026-02-01",
+    dateModified: "2026-03-17",
+    inLanguage: "en-US",
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <section className="bg-red-800 text-white py-16">
         <div className="max-w-4xl mx-auto px-4">
           <span className="inline-block bg-red-600 text-white text-xs font-semibold px-3 py-1 rounded-full mb-4">Emergency</span>

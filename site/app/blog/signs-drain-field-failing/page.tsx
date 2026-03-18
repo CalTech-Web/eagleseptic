@@ -5,11 +5,32 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Signs Your Drain Field Is Failing - Eagle Septic Guide",
   description: "Wet spots, green grass, outdoor sewage odor. Here is how to read the early warning signs of drain field failure before the repair window closes.",
+  openGraph: {
+    title: "Signs Your Drain Field Is Failing",
+    description: "Wet spots, green grass, outdoor sewage odor. Here is how to read the early warning signs of drain field failure before the repair window closes.",
+    url: "https://eaglesepticpumping.com/blog/signs-drain-field-failing",
+    type: "article",
+    siteName: "Eagle Septic Guide",
+  },
 };
 
 export default function SignsDrainFieldFailingPage() {
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "Signs Your Drain Field Is Failing",
+    description: "Wet spots, green grass, outdoor sewage odor. Here is how to read the early warning signs of drain field failure before the repair window closes.",
+    url: "https://eaglesepticpumping.com/blog/signs-drain-field-failing",
+    author: { "@type": "Organization", name: "Eagle Septic Guide", url: "https://eaglesepticpumping.com" },
+    publisher: { "@type": "Organization", name: "Eagle Septic Guide", url: "https://eaglesepticpumping.com" },
+    datePublished: "2026-03-01",
+    dateModified: "2026-03-17",
+    inLanguage: "en-US",
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <section className="bg-[#0c4a6e] text-white py-16">
         <div className="max-w-4xl mx-auto px-4">
           <span className="inline-block bg-[#16a34a] text-white text-xs font-semibold px-3 py-1 rounded-full mb-4">Troubleshooting</span>

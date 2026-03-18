@@ -5,11 +5,32 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "How Long Does a Septic System Last? - Eagle Septic Guide",
   description: "A concrete septic tank can last 40 years or more. The drain field feeding off it might fail in 20. Here is what determines lifespan and what shortens it.",
+  openGraph: {
+    title: "How Long Does a Septic System Last?",
+    description: "A concrete septic tank can last 40 years or more. The drain field feeding off it might fail in 20. Here is what determines lifespan and what shortens it.",
+    url: "https://eaglesepticpumping.com/blog/how-long-does-a-septic-system-last",
+    type: "article",
+    siteName: "Eagle Septic Guide",
+  },
 };
 
 export default function HowLongSepticSystemLastPage() {
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "How Long Does a Septic System Last?",
+    description: "A concrete septic tank can last 40 years or more. The drain field feeding off it might fail in 20. Here is what determines lifespan and what shortens it.",
+    url: "https://eaglesepticpumping.com/blog/how-long-does-a-septic-system-last",
+    author: { "@type": "Organization", name: "Eagle Septic Guide", url: "https://eaglesepticpumping.com" },
+    publisher: { "@type": "Organization", name: "Eagle Septic Guide", url: "https://eaglesepticpumping.com" },
+    datePublished: "2026-02-15",
+    dateModified: "2026-03-17",
+    inLanguage: "en-US",
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <section className="bg-[#0c4a6e] text-white py-16">
         <div className="max-w-4xl mx-auto px-4">
           <span className="inline-block bg-[#16a34a] text-white text-xs font-semibold px-3 py-1 rounded-full mb-4">How It Works</span>

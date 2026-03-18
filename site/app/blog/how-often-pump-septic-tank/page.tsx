@@ -4,12 +4,33 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "How Often Should I Pump My Septic Tank? - Eagle Septic Guide",
-  description: "Most households need septic tank pumping every 3 to 5 years. Learn how tank size, household size, and usage affect your pumping schedule — and what happens when you wait too long.",
+  description: "Most households need septic tank pumping every 3 to 5 years. Learn how tank size, household size, and usage affect your pumping schedule and what happens when you wait too long.",
+  openGraph: {
+    title: "How Often Should I Pump My Septic Tank?",
+    description: "Most households need septic tank pumping every 3 to 5 years. Learn how tank size, household size, and usage affect your pumping schedule and what happens when you wait too long.",
+    url: "https://eaglesepticpumping.com/blog/how-often-pump-septic-tank",
+    type: "article",
+    siteName: "Eagle Septic Guide",
+  },
 };
 
 export default function HowOftenPumpPage() {
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "How Often Should I Pump My Septic Tank?",
+    description: "Most households need septic tank pumping every 3 to 5 years. Learn how tank size, household size, and usage affect your pumping schedule and what happens when you wait too long.",
+    url: "https://eaglesepticpumping.com/blog/how-often-pump-septic-tank",
+    author: { "@type": "Organization", name: "Eagle Septic Guide", url: "https://eaglesepticpumping.com" },
+    publisher: { "@type": "Organization", name: "Eagle Septic Guide", url: "https://eaglesepticpumping.com" },
+    datePublished: "2026-02-01",
+    dateModified: "2026-03-17",
+    inLanguage: "en-US",
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <section className="bg-[#0c4a6e] text-white py-16">
         <div className="max-w-4xl mx-auto px-4">
           <span className="inline-block bg-[#16a34a] text-white text-xs font-semibold px-3 py-1 rounded-full mb-4">Maintenance</span>

@@ -5,11 +5,32 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "How to Find Your Septic Tank - Eagle Septic Guide",
   description: "Most homeowners have no idea where their septic tank is buried. Here is a step-by-step guide to locating it before your next service call.",
+  openGraph: {
+    title: "How to Find Your Septic Tank",
+    description: "Most homeowners have no idea where their septic tank is buried. Here is a step-by-step guide to locating it before your next service call.",
+    url: "https://eaglesepticpumping.com/blog/how-to-find-your-septic-tank",
+    type: "article",
+    siteName: "Eagle Septic Guide",
+  },
 };
 
 export default function HowToFindSepticTankPage() {
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "How to Find Your Septic Tank",
+    description: "Most homeowners have no idea where their septic tank is buried. Here is a step-by-step guide to locating it before your next service call.",
+    url: "https://eaglesepticpumping.com/blog/how-to-find-your-septic-tank",
+    author: { "@type": "Organization", name: "Eagle Septic Guide", url: "https://eaglesepticpumping.com" },
+    publisher: { "@type": "Organization", name: "Eagle Septic Guide", url: "https://eaglesepticpumping.com" },
+    datePublished: "2026-02-15",
+    dateModified: "2026-03-17",
+    inLanguage: "en-US",
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <section className="bg-[#0c4a6e] text-white py-16">
         <div className="max-w-4xl mx-auto px-4">
           <span className="inline-block bg-[#16a34a] text-white text-xs font-semibold px-3 py-1 rounded-full mb-4">How It Works</span>

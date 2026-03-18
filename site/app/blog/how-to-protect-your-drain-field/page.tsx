@@ -5,11 +5,32 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "How to Protect Your Drain Field - Eagle Septic Guide",
   description: "A drain field that lasts 25 years and one that fails in 10 are often the same system, managed differently. Here is what makes the difference.",
+  openGraph: {
+    title: "How to Protect Your Drain Field",
+    description: "A drain field that lasts 25 years and one that fails in 10 are often the same system, managed differently. Here is what makes the difference.",
+    url: "https://eaglesepticpumping.com/blog/how-to-protect-your-drain-field",
+    type: "article",
+    siteName: "Eagle Septic Guide",
+  },
 };
 
 export default function HowToProtectYourDrainFieldPage() {
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "How to Protect Your Drain Field",
+    description: "A drain field that lasts 25 years and one that fails in 10 are often the same system, managed differently. Here is what makes the difference.",
+    url: "https://eaglesepticpumping.com/blog/how-to-protect-your-drain-field",
+    author: { "@type": "Organization", name: "Eagle Septic Guide", url: "https://eaglesepticpumping.com" },
+    publisher: { "@type": "Organization", name: "Eagle Septic Guide", url: "https://eaglesepticpumping.com" },
+    datePublished: "2026-03-01",
+    dateModified: "2026-03-17",
+    inLanguage: "en-US",
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <section className="bg-[#0c4a6e] text-white py-16">
         <div className="max-w-4xl mx-auto px-4">
           <span className="inline-block bg-[#16a34a] text-white text-xs font-semibold px-3 py-1 rounded-full mb-4">Maintenance</span>

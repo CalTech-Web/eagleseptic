@@ -5,11 +5,31 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Buying a House with a Septic System - Eagle Septic Guide",
   description: "A standard home inspection does not cover the drain field. Here is what buyers need to know about septic inspections, permit records, and negotiating repairs before closing.",
+  openGraph: {
+    title: "Buying a House with a Septic System",
+    description: "A standard home inspection does not cover the drain field. Here is what buyers need to know about septic inspections, permit records, and negotiating repairs before closing.",
+    url: "https://eaglesepticpumping.com/blog/buying-house-with-septic-system",
+    type: "article",
+    siteName: "Eagle Septic Guide",
+  },
 };
 
 export default function BuyingHouseWithSepticSystemPage() {
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "Buying a House with a Septic System",
+    description: "A standard home inspection does not cover the drain field. Here is what buyers need to know about septic inspections, permit records, and negotiating repairs before closing.",
+    url: "https://eaglesepticpumping.com/blog/buying-house-with-septic-system",
+    author: { "@type": "Organization", name: "Eagle Septic Guide", url: "https://eaglesepticpumping.com" },
+    publisher: { "@type": "Organization", name: "Eagle Septic Guide", url: "https://eaglesepticpumping.com" },
+    datePublished: "2026-03-17",
+    dateModified: "2026-03-17",
+    inLanguage: "en-US",
+  };
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <section className="bg-[#0c4a6e] text-white py-16">
         <div className="max-w-4xl mx-auto px-4">
           <span className="inline-block bg-[#16a34a] text-white text-xs font-semibold px-3 py-1 rounded-full mb-4">Inspections</span>

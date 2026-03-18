@@ -5,11 +5,32 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Septic Backup After Heavy Rain: Why It Happens & What to Do - Eagle Septic Guide",
   description: "Heavy rain can saturate your drain field and overwhelm your septic system. Learn why it happens and what to do in the first 30 minutes to protect your home.",
+  openGraph: {
+    title: "Septic Backup After Heavy Rain: Why It Happens & What to Do",
+    description: "Heavy rain can saturate your drain field and overwhelm your septic system. Learn why it happens and what to do in the first 30 minutes to protect your home.",
+    url: "https://eaglesepticpumping.com/blog/septic-backup-after-heavy-rain",
+    type: "article",
+    siteName: "Eagle Septic Guide",
+  },
 };
 
 export default function SepticBackupRainPage() {
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "Septic Backup After Heavy Rain: Why It Happens & What to Do",
+    description: "Heavy rain can saturate your drain field and overwhelm your septic system. Learn why it happens and what to do in the first 30 minutes to protect your home.",
+    url: "https://eaglesepticpumping.com/blog/septic-backup-after-heavy-rain",
+    author: { "@type": "Organization", name: "Eagle Septic Guide", url: "https://eaglesepticpumping.com" },
+    publisher: { "@type": "Organization", name: "Eagle Septic Guide", url: "https://eaglesepticpumping.com" },
+    datePublished: "2026-02-01",
+    dateModified: "2026-03-17",
+    inLanguage: "en-US",
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <section className="bg-[#0c4a6e] text-white py-16">
         <div className="max-w-4xl mx-auto px-4">
           <span className="inline-block bg-[#16a34a] text-white text-xs font-semibold px-3 py-1 rounded-full mb-4">Troubleshooting</span>

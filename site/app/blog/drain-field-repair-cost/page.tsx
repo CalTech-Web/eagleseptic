@@ -5,11 +5,32 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "How Much Does Drain Field Repair Cost? - Eagle Septic Guide",
   description: "Drain field repair in the Central Valley runs $3,000 to $15,000 depending on what failed and how far it progressed. Here is the full cost breakdown.",
+  openGraph: {
+    title: "How Much Does Drain Field Repair Cost?",
+    description: "Drain field repair in the Central Valley runs $3,000 to $15,000 depending on what failed and how far it progressed. Here is the full cost breakdown.",
+    url: "https://eaglesepticpumping.com/blog/drain-field-repair-cost",
+    type: "article",
+    siteName: "Eagle Septic Guide",
+  },
 };
 
 export default function DrainFieldRepairCostPage() {
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "How Much Does Drain Field Repair Cost?",
+    description: "Drain field repair in the Central Valley runs $3,000 to $15,000 depending on what failed and how far it progressed. Here is the full cost breakdown.",
+    url: "https://eaglesepticpumping.com/blog/drain-field-repair-cost",
+    author: { "@type": "Organization", name: "Eagle Septic Guide", url: "https://eaglesepticpumping.com" },
+    publisher: { "@type": "Organization", name: "Eagle Septic Guide", url: "https://eaglesepticpumping.com" },
+    datePublished: "2026-03-01",
+    dateModified: "2026-03-17",
+    inLanguage: "en-US",
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <section className="bg-[#0c4a6e] text-white py-16">
         <div className="max-w-4xl mx-auto px-4">
           <span className="inline-block bg-[#16a34a] text-white text-xs font-semibold px-3 py-1 rounded-full mb-4">Costs</span>

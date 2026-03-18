@@ -5,11 +5,32 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Septic System vs Sewer System: What Is the Difference? - Eagle Septic Guide",
   description: "Not sure if you have a septic system or sewer connection? Learn the key differences, pros and cons, and what each system means for your home.",
+  openGraph: {
+    title: "Septic System vs Sewer System: What Is the Difference?",
+    description: "Not sure if you have a septic system or sewer connection? Learn the key differences, pros and cons, and what each system means for your home.",
+    url: "https://eaglesepticpumping.com/blog/septic-system-vs-sewer-system",
+    type: "article",
+    siteName: "Eagle Septic Guide",
+  },
 };
 
 export default function SepticVsSewerPage() {
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "Septic System vs Sewer System: What Is the Difference?",
+    description: "Not sure if you have a septic system or sewer connection? Learn the key differences, pros and cons, and what each system means for your home.",
+    url: "https://eaglesepticpumping.com/blog/septic-system-vs-sewer-system",
+    author: { "@type": "Organization", name: "Eagle Septic Guide", url: "https://eaglesepticpumping.com" },
+    publisher: { "@type": "Organization", name: "Eagle Septic Guide", url: "https://eaglesepticpumping.com" },
+    datePublished: "2026-02-01",
+    dateModified: "2026-03-17",
+    inLanguage: "en-US",
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <section className="bg-[#0c4a6e] text-white py-16">
         <div className="max-w-4xl mx-auto px-4">
           <span className="inline-block bg-[#16a34a] text-white text-xs font-semibold px-3 py-1 rounded-full mb-4">Basics</span>

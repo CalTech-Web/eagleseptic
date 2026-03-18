@@ -4,6 +4,12 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Septic System FAQ - Eagle Septic Guide",
   description: "Answers to the most common septic system questions. How often to pump, warning signs, costs, emergencies, and more. Written by licensed technicians.",
+  openGraph: {
+    title: "Septic System FAQ - Eagle Septic Guide",
+    description: "Answers to the most common septic system questions. How often to pump, warning signs, costs, emergencies, and more.",
+    url: "https://eaglesepticpumping.com/faq",
+    type: "website",
+  },
 };
 
 const faqs = [
@@ -58,8 +64,25 @@ const faqs = [
 ];
 
 export default function FAQPage() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.a,
+      },
+    })),
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <section className="bg-[#0c4a6e] text-white py-16">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h1 className="text-4xl font-bold mb-4">Septic System FAQ</h1>
