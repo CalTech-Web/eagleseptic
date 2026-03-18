@@ -17,16 +17,16 @@ const guides = [
   {
     category: "Maintenance",
     items: [
-      { title: "How Often to Pump Your Septic Tank", href: "/faq", desc: "Pumping intervals by household size and tank capacity." },
-      { title: "What Not to Flush or Pour Down the Drain", href: "/faq", desc: "Products and habits that can damage your system." },
+      { title: "How Often to Pump Your Septic Tank", href: "/blog/how-often-pump-septic-tank", desc: "Pumping intervals by household size and tank capacity." },
+      { title: "What Not to Flush or Pour Down the Drain", href: "/blog/what-not-to-flush-septic-system", desc: "Products and habits that can damage your system." },
       { title: "Understanding Maintenance Plans", href: "/maintenance-plan", desc: "Compare Essential ($299/yr) and Complete Care ($499/yr) plans." },
     ],
   },
   {
     category: "Troubleshooting",
     items: [
-      { title: "Warning Signs of a Failing Septic System", href: "/faq", desc: "Slow drains, odors, soggy yard. What each symptom means." },
-      { title: "What to Do in a Septic Emergency", href: "/emergency", desc: "Step-by-step guide for sewage backups and system failures." },
+      { title: "Warning Signs of a Failing Septic System", href: "/blog/warning-signs-septic-system-failing", desc: "Slow drains, odors, soggy yard. What each symptom means." },
+      { title: "What to Do in a Septic Emergency", href: "/blog/septic-emergency-what-to-do", desc: "Step-by-step guide for sewage backups and system failures." },
     ],
   },
   {
@@ -40,7 +40,7 @@ const guides = [
     category: "Real Estate",
     items: [
       { title: "What Is a Real Estate Septic Inspection?", href: "/real-estate-inspections", desc: "FHA and USDA compliant inspection reports within 24 hours." },
-      { title: "Buying a Home with a Septic System", href: "/real-estate-inspections", desc: "What buyers, sellers, and agents need to know." },
+      { title: "Buying a Home with a Septic System", href: "/blog/buying-house-with-septic-system", desc: "What buyers, sellers, and agents need to know." },
     ],
   },
 ];

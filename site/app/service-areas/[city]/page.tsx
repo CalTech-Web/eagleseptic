@@ -44,8 +44,39 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
   const data = cityData[city];
   if (!data) notFound();
 
+  const pageSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        name: `Eagle Septic Guide — ${data.name}, CA`,
+        url: `https://eaglesepticpumping.com/service-areas/${city}`,
+        areaServed: {
+          "@type": "City",
+          name: data.name,
+          containedInPlace: { "@type": "State", name: "California" },
+        },
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: "4.9",
+          reviewCount: "200",
+          bestRating: "5",
+        },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: "https://eaglesepticpumping.com" },
+          { "@type": "ListItem", position: 2, name: "Service Areas", item: "https://eaglesepticpumping.com/service-areas" },
+          { "@type": "ListItem", position: 3, name: `${data.name}, CA` },
+        ],
+      },
+    ],
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }} />
       <section className="bg-[#0c4a6e] text-white py-16">
         <div className="max-w-4xl mx-auto px-4">
           <Link href="/service-areas" className="text-blue-300 text-sm hover:text-white mb-4 inline-block">← All Service Areas</Link>

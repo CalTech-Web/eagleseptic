@@ -69,3 +69,20 @@ The blog now covers 15 articles. Costs category expanded (pumping + drain field 
 The drain field now has a content cluster: signs of failure, repair costs, and protective maintenance. Costs category went from 1 article to 2.
 [2026-03-17 19:38:34] Run #4 finished
 [2026-03-17 19:38:39] Run #5 starting (model: sonnet)
+✅ **Completed**
+
+- New article: **How to Tell If Your Septic Tank Is Full** at `/blog/how-to-tell-if-septic-tank-is-full` — newsroom style, covers what "full" actually means (sludge reaching outlet baffle), multi-fixture slow drains vs single clog, gurgling sounds, outdoor odors near the tank lid, wet ground and lush grass over the tank area, and the case for measuring before symptoms appear
+- New article: **Buying a House with a Septic System** at `/blog/buying-house-with-septic-system` — field guide style, covers why a standard home inspection misses the drain field, how to request a dedicated contingency inspection, what pumping records reveal, FHA/USDA requirements in Stanislaus/Merced/San Joaquin counties, how to read a full inspection report, negotiating after problem findings, and checking county permit records before the offer
+- Blog listing updated to 17 articles
+- Deployed to Vercel production — Ready at `site-sigma-pearl-55.vercel.app`
+
+The Inspections category now has 3 articles (general inspection, real estate inspection, buying a house). The Troubleshooting cluster grew to 4 articles with the full-tank diagnostic guide.
+[2026-03-17 19:50:00] Run #5 finished
+✅ **Completed**
+
+- New article: **How to Tell If Your Septic Tank Is Full** at `/blog/how-to-tell-if-septic-tank-is-full` — newsroom style, covers what "full" means in sludge terms, multi-fixture slow drains, gurgling sounds, outdoor odors near the tank, and wet ground or lush grass as visual tells
+- New article: **Buying a House with a Septic System** at `/blog/buying-house-with-septic-system` — field guide style, covers why standard home inspections miss the drain field, how to structure a contingency inspection, FHA/USDA requirements in Stanislaus/Merced/San Joaquin counties, reading the inspection report, negotiating findings, and checking county permit records before the offer
+- Blog listing updated to 17 articles
+- Deployed to Vercel production, Ready at `site-sigma-pearl-55.vercel.app`
+[2026-03-17 19:44:32] Run #5 finished
+[2026-03-17 19:44:32] Reached max loops (5). Stopping.

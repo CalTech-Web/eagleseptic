@@ -31,6 +31,15 @@ export default function SepticEmergencyPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: "https://eaglesepticpumping.com" },
+          { "@type": "ListItem", position: 2, name: "Blog", item: "https://eaglesepticpumping.com/blog" },
+          { "@type": "ListItem", position: 3, name: "Septic Emergency: What to Do First" },
+        ],
+      }) }} />
       <section className="bg-red-800 text-white py-16">
         <div className="max-w-4xl mx-auto px-4">
           <span className="inline-block bg-red-600 text-white text-xs font-semibold px-3 py-1 rounded-full mb-4">Emergency</span>

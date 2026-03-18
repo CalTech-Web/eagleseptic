@@ -6,9 +6,39 @@ export const metadata: Metadata = {
   description: "What tank cleaning and maintenance involves, how it differs from standard pumping, and when to schedule it.",
 };
 
+const areaServed = [
+  { "@type": "County", name: "Stanislaus County", containedInPlace: { "@type": "State", name: "California" } },
+  { "@type": "County", name: "San Joaquin County", containedInPlace: { "@type": "State", name: "California" } },
+  { "@type": "County", name: "Merced County", containedInPlace: { "@type": "State", name: "California" } },
+];
+
+const pageSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      name: "Septic Tank Cleaning and Maintenance",
+      description: "High-pressure interior tank wash, full sludge removal, baffle inspection and cleaning, filter service, and detailed written maintenance report. Serving Central Valley, California.",
+      provider: { "@type": "LocalBusiness", name: "Eagle Septic Guide", url: "https://eaglesepticpumping.com" },
+      areaServed,
+      priceRange: "$400-$750",
+      url: "https://eaglesepticpumping.com/services/tank-cleaning-maintenance",
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://eaglesepticpumping.com" },
+        { "@type": "ListItem", position: 2, name: "Services", item: "https://eaglesepticpumping.com/services" },
+        { "@type": "ListItem", position: 3, name: "Tank Cleaning and Maintenance" },
+      ],
+    },
+  ],
+};
+
 export default function TankCleaningPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }} />
       <section className="bg-[#0c4a6e] text-white py-16">
         <div className="max-w-4xl mx-auto px-4">
           <Link href="/services" className="text-blue-300 text-sm hover:text-white mb-4 inline-block">← All Services</Link>

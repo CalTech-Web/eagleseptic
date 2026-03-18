@@ -6,9 +6,39 @@ export const metadata: Metadata = {
   description: "24/7 emergency septic service in the Central Valley. Real person answers. On-site within 2 to 4 hours. Sewage backup, system failure, emergency pump-out.",
 };
 
+const areaServed = [
+  { "@type": "County", name: "Stanislaus County", containedInPlace: { "@type": "State", name: "California" } },
+  { "@type": "County", name: "San Joaquin County", containedInPlace: { "@type": "State", name: "California" } },
+  { "@type": "County", name: "Merced County", containedInPlace: { "@type": "State", name: "California" } },
+];
+
+const pageSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      name: "Emergency Septic Services",
+      description: "24/7 emergency septic service including sewage backup response, emergency tank pumping, and same-day dispatch. Real person answers every call. On-site within 2 to 4 hours. Serving Central Valley, California.",
+      provider: { "@type": "LocalBusiness", name: "Eagle Septic Guide", url: "https://eaglesepticpumping.com" },
+      areaServed,
+      priceRange: "$500-$1200",
+      url: "https://eaglesepticpumping.com/services/emergency-services",
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://eaglesepticpumping.com" },
+        { "@type": "ListItem", position: 2, name: "Services", item: "https://eaglesepticpumping.com/services" },
+        { "@type": "ListItem", position: 3, name: "Emergency Septic Services" },
+      ],
+    },
+  ],
+};
+
 export default function EmergencyServicesPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }} />
       <section className="bg-red-700 text-white py-16">
         <div className="max-w-4xl mx-auto px-4">
           <Link href="/services" className="text-red-200 text-sm hover:text-white mb-4 inline-block">← All Services</Link>
