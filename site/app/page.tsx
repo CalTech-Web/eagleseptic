@@ -535,6 +535,101 @@ export default function HomePage() {
           </p>
         </div>
       </section>
+
+      {/* Final CTA */}
+      <section className="bg-brand-900 py-16 sm:py-20">
+        <div className="container-max section-padding">
+          <div className="grid gap-6 md:grid-cols-2">
+            {/* Emergency path */}
+            <div className="flex flex-col rounded-2xl bg-red-900/40 p-8 ring-1 ring-red-500/30">
+              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-red-500/20">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-6 w-6 text-red-400" aria-hidden="true">
+                  <path fillRule="evenodd" d="M9.401 3.003c1.155-2 4.043-2 5.197 0l7.355 12.748c1.154 2-.29 4.5-2.599 4.5H4.645c-2.309 0-3.752-2.5-2.598-4.5L9.4 3.003zM12 8.25a.75.75 0 01.75.75v3.75a.75.75 0 01-1.5 0V9a.75.75 0 01.75-.75zm0 8.25a.75.75 0 100-1.5.75.75 0 000 1.5z" clipRule="evenodd" />
+                </svg>
+              </div>
+              <h3 className="mb-2 text-xl font-bold text-white">Septic Emergency?</h3>
+              <p className="mb-6 flex-1 text-brand-200">
+                Sewage backup, strong odors inside, or wet soggy ground near your tank? Stop all water use now and get help. We answer 24/7, real person every time.
+              </p>
+              <div className="flex flex-wrap items-center gap-4">
+                <Link href="/emergency" className="inline-flex items-center gap-2 rounded-lg bg-red-600 px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-red-700">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-4 w-4" aria-hidden="true">
+                    <path d="M2 3a1 1 0 00-1 1v1a1 1 0 001 1h16a1 1 0 001-1V4a1 1 0 00-1-1H2zM2 9a1 1 0 000 2h8a1 1 0 000-2H2zM2 14a1 1 0 000 2h8a1 1 0 000-2H2zM14 14a1 1 0 00-1 1v2a1 1 0 001 1h4a1 1 0 001-1v-2a1 1 0 00-1-1h-4z" />
+                  </svg>
+                  Emergency Guide
+                </Link>
+                <a href="tel:5558675309" className="text-sm font-semibold text-red-300 hover:text-white">
+                  (555) 867-5309
+                </a>
+              </div>
+              <p className="mt-4 text-xs text-brand-400">Typical on-site response within 2 to 4 hours</p>
+            </div>
+
+            {/* Scheduled service path */}
+            <div className="flex flex-col rounded-2xl bg-accent-800/20 p-8 ring-1 ring-accent-500/30">
+              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-accent-500/20">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-6 w-6 text-accent-400" aria-hidden="true">
+                  <path fillRule="evenodd" d="M6.75 2.25A.75.75 0 017.5 3v1.5h9V3A.75.75 0 0118 3v1.5h.75a3 3 0 013 3v11.25a3 3 0 01-3 3H5.25a3 3 0 01-3-3V7.5a3 3 0 013-3H6V3a.75.75 0 01.75-.75zm13.5 9a1.5 1.5 0 00-1.5-1.5H5.25a1.5 1.5 0 00-1.5 1.5v7.5a1.5 1.5 0 001.5 1.5h13.5a1.5 1.5 0 001.5-1.5v-7.5z" clipRule="evenodd" />
+                </svg>
+              </div>
+              <h3 className="mb-2 text-xl font-bold text-white">Schedule Routine Service</h3>
+              <p className="mb-6 flex-1 text-brand-200">
+                Due for a pump-out or inspection? Regular maintenance every 3 to 5 years prevents costly drain field failures. Upfront pricing before any work begins.
+              </p>
+              <div className="flex flex-wrap items-center gap-4">
+                <Link href="/services" className="inline-flex items-center gap-2 rounded-lg bg-accent-600 px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-accent-700">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-4 w-4" aria-hidden="true">
+                    <path fillRule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clipRule="evenodd" />
+                  </svg>
+                  View Services
+                </Link>
+                <Link href="/pricing" className="text-sm font-semibold text-accent-300 hover:text-white">
+                  See pricing
+                </Link>
+              </div>
+              <div className="mt-4 flex flex-wrap gap-4 text-xs text-brand-400">
+                <span className="flex items-center gap-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="h-3.5 w-3.5 text-accent-500" aria-hidden="true">
+                    <path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd" />
+                  </svg>
+                  No surprise charges
+                </span>
+                <span className="flex items-center gap-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="h-3.5 w-3.5 text-accent-500" aria-hidden="true">
+                    <path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd" />
+                  </svg>
+                  Free upfront estimate
+                </span>
+                <span className="flex items-center gap-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="h-3.5 w-3.5 text-accent-500" aria-hidden="true">
+                    <path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd" />
+                  </svg>
+                  4.9 stars, 200+ reviews
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* Trust bar */}
+          <div className="mt-10 grid grid-cols-2 gap-4 border-t border-white/10 pt-8 text-center sm:grid-cols-4">
+            {[
+              { label: "18+ Years Experience", icon: "M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" },
+              { label: "Upfront Pricing Always", icon: "M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" },
+              { label: "24/7 Emergency Response", icon: "M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" },
+              { label: "C-42 Licensed Technicians", icon: "M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" },
+            ].map((item) => (
+              <div key={item.label} className="flex flex-col items-center gap-2">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="h-5 w-5 text-accent-400" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" d={item.icon} />
+                  </svg>
+                </div>
+                <span className="text-xs font-semibold text-brand-200">{item.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </>
   );
 }
