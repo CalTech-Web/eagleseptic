@@ -85,6 +85,20 @@ const posts = [
     category: "How It Works",
     image: "/images/hero-residential-home.jpg",
   },
+  {
+    title: "Signs Your Drain Field Is Failing",
+    slug: "/blog/signs-drain-field-failing",
+    excerpt: "Wet spots, green grass stripes, outdoor sewage odor. Here is how to read the early warning signs before the repair window closes.",
+    category: "Troubleshooting",
+    image: "/images/lawn-drain-field.jpg",
+  },
+  {
+    title: "Do Septic Additives Actually Work?",
+    slug: "/blog/do-septic-additives-work",
+    excerpt: "Biological enzymes, bacterial supplements, chemical treatments. Here is what the research says about septic additives and what actually protects your system.",
+    category: "Maintenance",
+    image: "/images/lawn-drain-field.jpg",
+  },
 ];
 
 export default function BlogPage() {
