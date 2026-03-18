@@ -536,6 +536,62 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Service Areas */}
+      <section className="bg-white py-14 sm:py-18">
+        <div className="container-max section-padding">
+          <div className="mb-10 text-center">
+            <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-brand-600">Coverage Area</p>
+            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">Serving Central Valley, California</h2>
+            <p className="mx-auto mt-3 max-w-2xl text-lg text-gray-600">
+              Our licensed technicians serve homeowners across Stanislaus, San Joaquin, and Merced counties.
+            </p>
+          </div>
+          <div className="grid gap-6 md:grid-cols-3">
+            {[
+              {
+                county: "Stanislaus County",
+                cities: ["Modesto", "Turlock", "Ceres", "Riverbank", "Oakdale", "Patterson", "Waterford", "Hughson", "Newman", "Denair"],
+              },
+              {
+                county: "San Joaquin County",
+                cities: ["Stockton", "Tracy", "Manteca", "Ripon", "Escalon"],
+              },
+              {
+                county: "Merced County",
+                cities: ["Merced", "Atwater", "Los Banos", "Livingston", "Gustine"],
+              },
+            ].map((group) => (
+              <div key={group.county} className="rounded-2xl border border-brand-100 bg-brand-50 p-6">
+                <div className="mb-4 flex items-center gap-2">
+                  <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-brand-700 text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-4 w-4" aria-hidden="true">
+                      <path fillRule="evenodd" d="M9.69 18.933l.003.001C9.89 19.02 10 19 10 19s.11.02.308-.066l.002-.001.006-.003.018-.008a5.741 5.741 0 00.281-.14c.186-.096.446-.24.757-.433.62-.384 1.445-.966 2.274-1.765C15.302 15.988 17 13.493 17 10a7 7 0 10-14 0c0 3.492 1.698 5.988 3.355 7.584a13.731 13.731 0 002.273 1.765 11.842 11.842 0 00.757.433 5.71 5.71 0 00.28.14l.018.008.006.003zM10 11.25a1.25 1.25 0 100-2.5 1.25 1.25 0 000 2.5z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <h3 className="font-bold text-gray-900">{group.county}</h3>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {group.cities.map((city) => (
+                    <Link
+                      key={city}
+                      href={`/service-areas/${city.toLowerCase().replace(/\s+/g, "-")}`}
+                      className="rounded-full bg-white px-3 py-1 text-sm font-medium text-brand-700 ring-1 ring-brand-200 transition-colors hover:bg-brand-700 hover:text-white hover:ring-brand-700"
+                    >
+                      {city}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="mt-8 text-center text-sm text-gray-500">
+            Don&apos;t see your city?{" "}
+            <Link href="/service-areas" className="font-semibold text-brand-700 hover:underline">View all service areas</Link>
+            {" "}or call us to confirm coverage.
+          </p>
+        </div>
+      </section>
+
       {/* Final CTA */}
       <section className="bg-brand-900 py-16 sm:py-20">
         <div className="container-max section-padding">
