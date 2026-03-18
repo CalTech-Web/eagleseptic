@@ -6,9 +6,41 @@ export const metadata: Metadata = {
   description: "Eagle Septic Guide is a free educational resource for homeowners across California's Central Valley. Written by licensed C-42 technicians with 18+ years of experience.",
 };
 
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Eagle Septic Guide",
+  url: "https://eaglesepticpumping.com",
+  description: "Free educational resource for homeowners across California's Central Valley, offering plain-language guides on septic system maintenance, troubleshooting, costs, and emergency response, written by licensed C-42 technicians with 18+ years of experience.",
+  areaServed: [
+    { "@type": "County", name: "Stanislaus County", containedInPlace: { "@type": "State", name: "California" } },
+    { "@type": "County", name: "San Joaquin County", containedInPlace: { "@type": "State", name: "California" } },
+    { "@type": "County", name: "Merced County", containedInPlace: { "@type": "State", name: "California" } },
+  ],
+  knowsAbout: [
+    "Septic tank pumping",
+    "Septic system maintenance",
+    "Drain field repair",
+    "Septic inspections",
+    "Septic system installation",
+    "Emergency septic services",
+  ],
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://eaglesepticpumping.com" },
+    { "@type": "ListItem", position: 2, name: "About", item: "https://eaglesepticpumping.com/about" },
+  ],
+};
+
 export default function AboutPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <section className="bg-[#0c4a6e] text-white py-16">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h1 className="text-4xl font-bold mb-4">About Eagle Septic Guide</h1>

@@ -7,9 +7,53 @@ export const metadata: Metadata = {
   description: "What to do during a septic emergency. Step-by-step guide for sewage backups, system failures, and drain field flooding. Available 24/7.",
 };
 
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  name: "What to Do During a Septic Emergency",
+  description: "Step-by-step guide for handling a septic system emergency including sewage backup and drain field failure.",
+  step: [
+    {
+      "@type": "HowToStep",
+      position: 1,
+      name: "Stop all water use immediately",
+      text: "Every toilet flush, shower, or sink use adds more water to an already overloaded system.",
+    },
+    {
+      "@type": "HowToStep",
+      position: 2,
+      name: "Keep people and pets away from wet outdoor areas",
+      text: "Sewage is a serious health hazard. Do not let anyone walk in soggy areas near the tank or drain field.",
+    },
+    {
+      "@type": "HowToStep",
+      position: 3,
+      name: "Open windows if safe",
+      text: "Sewage gases inside the home can be toxic. Ventilate without creating additional plumbing activity.",
+    },
+    {
+      "@type": "HowToStep",
+      position: 4,
+      name: "Call a septic professional immediately",
+      text: "Most emergencies are resolved with an emergency pump-out. Do not wait to call.",
+    },
+  ],
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://eaglesepticpumping.com" },
+    { "@type": "ListItem", position: 2, name: "Emergency Guide", item: "https://eaglesepticpumping.com/emergency" },
+  ],
+};
+
 export default function EmergencyPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <section className="bg-red-700 text-white py-16">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h1 className="text-4xl font-bold mb-4">Septic Emergency Guide</h1>
@@ -71,7 +115,7 @@ export default function EmergencyPage() {
         <p className="text-gray-700 mb-4 leading-relaxed">When you call, a real person answers and walks you through the situation. A technician is dispatched with priority scheduling. Typical on-site response time is 2 to 4 hours. The technician performs an emergency pump-out to relieve system pressure, assesses the cause of the failure, and provides a clear explanation and estimate for any additional work needed before proceeding.</p>
 
         <h2 className="text-2xl font-bold text-[#0c4a6e] mb-3 mt-8">After the Emergency</h2>
-        <p className="text-gray-700 mb-4 leading-relaxed">Once the immediate crisis is resolved, the technician will explain what caused the problem and what, if anything, needs to be repaired. A one-time emergency often signals a system that needs more attention. Enrolling in a maintenance plan prevents most future emergencies by keeping the system on a scheduled service cycle.</p>
+        <p className="text-gray-700 mb-4 leading-relaxed">Once the immediate crisis is resolved, the technician will explain what caused the problem and what, if anything, needs to be repaired. Many emergencies stem from a tank that has never been pumped on schedule. See our guide on <Link href="/blog/how-often-pump-septic-tank" className="text-[#0c4a6e] underline hover:text-[#075985]">how often to pump your septic tank</Link> to avoid future crises. If the drain field is involved, read about <Link href="/blog/signs-drain-field-failing" className="text-[#0c4a6e] underline hover:text-[#075985]">signs of drain field failure</Link> to understand next steps. Enrolling in a <Link href="/maintenance-plan" className="text-[#0c4a6e] underline hover:text-[#075985]">maintenance plan</Link> prevents most future emergencies by keeping the system on a scheduled service cycle.</p>
 
         <div className="bg-[#0c4a6e] text-white rounded-xl p-6 mt-8 text-center">
           <h3 className="font-bold text-xl mb-2">Septic Emergency? Call Now.</h3>

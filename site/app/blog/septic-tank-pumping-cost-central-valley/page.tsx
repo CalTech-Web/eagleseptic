@@ -108,7 +108,7 @@ export default function PumpingCostPage() {
 
         <h2 className="text-2xl font-bold text-[#0c4a6e] mb-3 mt-8">Why Regular Pumping Saves Money</h2>
         <p className="text-gray-700 mb-4 leading-relaxed">
-          A $400 pump-out every 3 to 5 years is the most cost-effective maintenance a homeowner can do. When the tank overflows and solids reach the drain field, repair costs jump to $3,000 to $15,000. A full drain field replacement runs $10,000 to $30,000. Regular pumping prevents all of that.
+          A $400 pump-out <Link href="/blog/how-often-pump-septic-tank" className="text-[#0c4a6e] underline hover:text-[#075985]">every 3 to 5 years</Link> is the most cost-effective maintenance a homeowner can do. When the tank overflows and solids reach the drain field, <Link href="/blog/drain-field-repair-cost" className="text-[#0c4a6e] underline hover:text-[#075985]">drain field repair costs</Link> jump to $3,000 to $15,000. A full drain field replacement runs $10,000 to $30,000. Regular pumping prevents all of that. Our <Link href="/maintenance-plan" className="text-[#0c4a6e] underline hover:text-[#075985]">annual maintenance plans</Link> starting at $299/year make it easy to stay on schedule.
         </p>
 
         <div className="flex flex-wrap gap-4 mt-8">

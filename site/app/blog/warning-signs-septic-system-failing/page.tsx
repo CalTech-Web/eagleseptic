@@ -79,12 +79,12 @@ export default function WarningSeparatePage() {
 
         <h2 className="text-2xl font-bold text-[#0c4a6e] mb-3 mt-8">5. Sewage Backup Into the Home</h2>
         <p className="text-gray-700 mb-4 leading-relaxed">
-          The most obvious and serious sign: raw sewage backing up into sinks, tubs, or toilets. This requires immediate action. Stop using water in the home and call a septic professional immediately. Every additional flush makes the situation worse.
+          The most obvious and serious sign: raw sewage backing up into sinks, tubs, or toilets. This requires immediate action. Stop using water in the home and call a septic professional immediately. Every additional flush makes the situation worse. Read our <Link href="/blog/septic-emergency-what-to-do" className="text-[#0c4a6e] underline hover:text-[#075985]">septic emergency guide</Link> for exact steps.
         </p>
 
         <h2 className="text-2xl font-bold text-[#0c4a6e] mb-3 mt-8">6. Very Old System or Unknown Service History</h2>
         <p className="text-gray-700 mb-4 leading-relaxed">
-          If you do not know when your tank was last pumped, or the system is more than 20 to 30 years old, schedule an inspection. Older systems, especially those with concrete tanks or distribution boxes, may have cracked components that are not immediately visible.
+          If you do not know when your tank was last pumped, or the system is more than 20 to 30 years old, schedule an inspection. Our guide on <Link href="/blog/how-often-pump-septic-tank" className="text-[#0c4a6e] underline hover:text-[#075985]">how often to pump a septic tank</Link> explains the recommended intervals by household size. Older systems, especially those with concrete tanks or distribution boxes, may have cracked components that are not immediately visible. If the tank is overdue and the drain field smells or is soggy, also read our article on <Link href="/blog/signs-drain-field-failing" className="text-[#0c4a6e] underline hover:text-[#075985]">signs a drain field is failing</Link>.
         </p>
 
         <div className="bg-[#0c4a6e]/5 rounded-xl p-6 mt-10 mb-6">

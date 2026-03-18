@@ -84,12 +84,12 @@ export default function HowOftenPumpPage() {
 
         <h2 className="text-2xl font-bold text-[#0c4a6e] mb-3 mt-8">What Happens When You Wait Too Long</h2>
         <p className="text-gray-700 mb-4 leading-relaxed">
-          When sludge and scum build up past the outlet baffle, solids flow out of the tank and into your drain field. Once solids clog the drain field pipes, the soil can no longer absorb effluent. The system backs up into your home or saturates your yard. Drain field replacement costs between $15,000 and $50,000. A routine pump-out costs $300 to $550.
+          When sludge and scum build up past the outlet baffle, solids flow out of the tank and into your drain field. Once solids clog the drain field pipes, the soil can no longer absorb effluent. The system backs up into your home or saturates your yard. <Link href="/blog/drain-field-repair-cost" className="text-[#0c4a6e] underline hover:text-[#075985]">Drain field repair costs</Link> between $3,000 and $15,000, and full replacement runs $15,000 to $50,000. A routine pump-out costs $300 to $550. See our <Link href="/blog/septic-tank-pumping-cost-central-valley" className="text-[#0c4a6e] underline hover:text-[#075985]">Central Valley pumping cost guide</Link> for a full price breakdown.
         </p>
 
         <h2 className="text-2xl font-bold text-[#0c4a6e] mb-3 mt-8">Signs You Are Overdue</h2>
         <p className="text-gray-700 mb-4 leading-relaxed">
-          If you do not know when your tank was last pumped, look for these warning signs: slow or gurgling drains, sewage odors near the tank or drain field, unusually lush grass over the drain field, or wet or spongy ground. Any of these is a signal to call a technician.
+          If you do not know when your tank was last pumped, look for these <Link href="/blog/warning-signs-septic-system-failing" className="text-[#0c4a6e] underline hover:text-[#075985]">warning signs of a failing septic system</Link>: slow or gurgling drains, sewage odors near the tank or drain field, unusually lush grass over the drain field, or wet or spongy ground. Any of these is a signal to call a technician.
         </p>
 
         <div className="bg-[#0c4a6e]/5 rounded-xl p-6 mt-10 mb-6">

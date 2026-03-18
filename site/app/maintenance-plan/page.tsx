@@ -6,9 +6,55 @@ export const metadata: Metadata = {
   description: "Essential ($299/year) and Complete Care ($499/year) septic maintenance plans. Prevent expensive failures with scheduled annual service.",
 };
 
+const productsSchema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: "Essential Septic Maintenance Plan",
+    description: "Annual septic tank pump-out (up to 1,500-gallon tank), 10% off additional services, and priority scheduling within 48 hours. No contract, renews annually.",
+    brand: { "@type": "Brand", name: "Eagle Septic Guide" },
+    offers: {
+      "@type": "Offer",
+      price: "299",
+      priceCurrency: "USD",
+      priceValidUntil: "2027-01-01",
+      availability: "https://schema.org/InStock",
+      url: "https://eaglesepticpumping.com/maintenance-plan",
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: "Complete Care Septic Maintenance Plan",
+    description: "Annual pump-out and full tank cleaning, effluent filter service, drain field assessment, same-day emergency guarantee, and 15% off repairs. No contract, renews annually.",
+    brand: { "@type": "Brand", name: "Eagle Septic Guide" },
+    offers: {
+      "@type": "Offer",
+      price: "499",
+      priceCurrency: "USD",
+      priceValidUntil: "2027-01-01",
+      availability: "https://schema.org/InStock",
+      url: "https://eaglesepticpumping.com/maintenance-plan",
+    },
+  },
+];
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://eaglesepticpumping.com" },
+    { "@type": "ListItem", position: 2, name: "Maintenance Plans", item: "https://eaglesepticpumping.com/maintenance-plan" },
+  ],
+};
+
 export default function MaintenancePlanPage() {
   return (
     <>
+      {productsSchema.map((schema, i) => (
+        <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      ))}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <section className="bg-[#0c4a6e] text-white py-16">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h1 className="text-4xl font-bold mb-4">Septic Maintenance Plans</h1>
