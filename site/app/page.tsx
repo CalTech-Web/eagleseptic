@@ -181,6 +181,51 @@ const healthCategories = [
   },
 ];
 
+const testimonials = [
+  {
+    quote: "Called at 8am and they were at my house by noon. The tech was professional, explained everything he was doing, and the price was exactly what they quoted over the phone. No surprises. Will be calling Eagle Septic every time.",
+    name: "Michael R.",
+    location: "Modesto, CA",
+    service: "Septic Pumping",
+  },
+  {
+    quote: "Sewage backup on a Sunday morning, every homeowner's nightmare. Eagle Septic answered immediately and had someone out within two hours. They cleared the blockage fast and charged a fair emergency rate. Absolute lifesavers.",
+    name: "Sandra K.",
+    location: "Turlock, CA",
+    service: "Emergency Service",
+  },
+  {
+    quote: "Had a failing drain field that two other companies told me needed full replacement. Eagle Septic diagnosed the actual problem, repaired it for a fraction of the price, and it's been running perfectly for three months. Honest and knowledgeable.",
+    name: "Jennifer T.",
+    location: "Patterson, CA",
+    service: "Drain Field Repair",
+  },
+  {
+    quote: "We were buying a house and needed a septic inspection before closing. Eagle Septic fit us in on short notice, gave us a thorough written report, and even walked us through what to watch for as new owners.",
+    name: "Dave and Pam L.",
+    location: "Ceres, CA",
+    service: "Full Inspection",
+  },
+  {
+    quote: "My system was way overdue for cleaning and I was nervous about the cost. These guys were upfront about pricing from the start. Fair, fast, and left the yard just as clean as they found it.",
+    name: "Carlos M.",
+    location: "Riverbank, CA",
+    service: "Tank Cleaning",
+  },
+  {
+    quote: "Been using Eagle Septic for five years now. They're always on time, always thorough, and they remember my system from visit to visit. That kind of consistency is hard to find. Wouldn't use anyone else.",
+    name: "Tom B.",
+    location: "Oakdale, CA",
+    service: "Routine Maintenance",
+  },
+];
+
+const starIcon = (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-4 w-4 text-accent-400" aria-hidden="true">
+    <path fillRule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clipRule="evenodd" />
+  </svg>
+);
+
 const bulletIcon = (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="mt-0.5 h-4 w-4 flex-shrink-0 text-gray-400" aria-hidden="true">
     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-11.25a.75.75 0 00-1.5 0v4.59L7.3 9.24a.75.75 0 00-1.1 1.02l3.25 3.5a.75.75 0 001.1 0l3.25-3.5a.75.75 0 10-1.1-1.02l-1.95 2.1V6.75z" clipRule="evenodd" />
@@ -328,6 +373,35 @@ export default function HomePage() {
             <Link href="/resources" className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-700 hover:text-brand-900">
               Browse all septic guides and resources{arrowIcon}
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="bg-brand-900 py-16 sm:py-20">
+        <div className="container-max section-padding">
+          <div className="mb-10 text-center">
+            <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-accent-400">What Homeowners Say</p>
+            <h2 className="text-3xl font-bold text-white sm:text-4xl">4.9 Stars Across 200+ Google Reviews</h2>
+            <p className="mx-auto mt-3 max-w-2xl text-lg text-brand-200">
+              Real feedback from Central Valley homeowners we've helped with pumping, emergencies, inspections, and repairs.
+            </p>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {testimonials.map((t) => (
+              <figure key={t.name} className="flex flex-col rounded-2xl bg-brand-800/60 p-6 ring-1 ring-white/10">
+                <div className="mb-4 flex gap-0.5">
+                  {starIcon}{starIcon}{starIcon}{starIcon}{starIcon}
+                </div>
+                <blockquote className="flex-1">
+                  <p className="text-sm leading-relaxed text-brand-100">&ldquo;{t.quote}&rdquo;</p>
+                </blockquote>
+                <figcaption className="mt-5 border-t border-white/10 pt-4">
+                  <div className="font-semibold text-white">{t.name}</div>
+                  <div className="mt-0.5 text-xs text-brand-300">{t.location} &middot; {t.service}</div>
+                </figcaption>
+              </figure>
+            ))}
           </div>
         </div>
       </section>
